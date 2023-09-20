@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web de Quebrada</title>
+
+  <link rel="shortcut icon" href="img/logos/favicon-01.svg" type="image/x-icon" />
+
+  <!-- animações -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <!--AOS.animate-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!---css+reset-->
+  <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="stylesheet" href="css/aos.css">
+  <!--responsivo-->
+  <link rel="stylesheet" href="css/responsivo.css" />
+  <link rel="shortcut icon" href="img/favicu.svg" type="image/x-icon">
+</head>
+
+<body id="dark">
+  <!-----------Topo---------->
+  <div class="topo-corpo" aria-describedby="topo do site">
+    <header id="top">
+      <a title="Botao" href="#" class="topo-btn">Contratar</a>
+      <h1 data-menssage="logo da empresa escrito web de quebrada!" id="LOG">Logo</h1>
+
+      <div aria-describedby="menu mobile" id="menu" class="menu-mobile">
+         <!---dark btn-->
+         <strong>Modo escuro</strong>
+         <div class="container">
+          <div class="btn">
+
+          </div>
+        </div>
+        <!--darkfim-->
+        <ul>
+          <li class="menu-item"><a role="link" href="#" class="menu-link">Início</a></li>
+          <li class="menu-item">
+            <a role="link" href="#servico" class="menu-link">Serviços</a>
+          </li>
+          <li class="menu-item">
+            <a role="link" href="#sobre" class="menu-link">Sobre</a>
+          </li>
+          <li class="menu-item">
+            <a role="link" href="#portfolio" class="menu-link">Portfólio</a>
+          </li>
+        </ul>
+        <div class="topo-rede-social">
+          <a role="link" href="#">LinkedIn</a>
+          <a role="link" href="#">WhatsApp</a>
+          <a role="link" href="#">Instagram</a>
+        </div>
+        
+      </div>
+
+      <div class="mobile-menu-icon">
+        <button onclick="menuShow(); toggleMenu()">
+          <img class="icon-menu" src="img/menu/btn-abrirmenu.svg" alt="menu hamburguer" />
+        </button>
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li class="menu-item">
+            <a role="link" href="#" class="ativo menu-link">Início</a>
+          </li>
+          <li class="menu-item">
+            <a role="link" href="#servico" class="menu-link">Serviços</a>
+          </li>
+          <li class="menu-item">
+            <a role="link" href="#sobre" class="menu-link">Sobre</a>
+          </li>
+          <li class="menu-item">
+            <a role="link" href="#portfolio" class="menu-link">Portfólio</a>
+          </li>
+        </ul>
+        <div class="topo-rede-social">
+          <a role="link" href="#">LinkedIn</a>
+          <a role="link" href="#">WhatsApp</a>
+          <a role="link" href="#">Instagram</a>
+        </div>
+      <!---dark btn-->
+      <div class="container">
+       <div class="btn">
+
+       </div>
+     </div>
+     <!--darkfim-->
+
+      </nav>
+
+    </header>
+
+    <div aria-labelledby="carrosel de palavras" class="slogan-cont">
+      <div class="slogan-words">
+        <p>Criação de sites</p>
+        <div class="words">
+          <span>Modernos.</span>
+          <span>Institucionais.</span>
+          <span>Responsivos.</span>
+          <span>Otimizados.</span>
+          <span>Modernos.</span>
+        </div>
+        <div class="slogan-btn-cont">
+          <a role="link" href="formulario.html" target="_blank" class="slogan-btn">Contratar</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <main>
+
+    <!-----------servico começo---------->
+    <section aria-labelledby="seção serviços" id="servicos">
+      <div data-aos="fade-up" class="servicos-banner site posicionamento">
+        <div aria-describedby="bloco um">
+          <img src="img/servico.1.svg" alt="icone prédio" />
+          <h2>Sites Institucionais</h2>
+          <p>
+            Criamos sites que possuem a Alma e DNA da sua empresa, de forma
+            única e desenhados exclusivamente para a sua marca. Tudo pensado
+            por profissionais dedicados a entender e comunicar com
+            assertividade para o seu público-alvo.
+          </p>
+          <button data-menssage="esse é o primeiro botao">
+            <strong class="circle">
+              <strong class="icon arrow"></strong>
+            </strong>
+            <strong class="text">Saiba mais</strong>
+          </button>
+        </div>
+        <div aria-describedby="bloco dois">
+          <img src="img/servico.2.svg" alt="lampada" />
+          <h2>Sites Responsivos</h2>
+          <p>
+            Criamos sites com a última tecnologia disponível para sua
+            segurança. Nossos projetos são baseados na tecnologia responsiva
+            criando uma versão para cada dispositivo: celular, tablet e
+            desktop.
+          </p>
+          <button data-menssage="esse é o segundo botao">
+            <strong class="circle">
+              <strong class="icon arrow"></strong>
+            </strong>
+            <strong class="text">Saiba mais</strong>
+          </button>
+        </div>
+        <div aria-describedby="bloco tres">
+          <img src="img/servico.3.svg" alt="carrinho de compras" />
+          <h2>Sites E-commerce</h2>
+          <p>
+            Criamos sites de lojas virtuais que permitem a venda de produtos
+            ou serviços pela internet, incluindo integrações com meios de
+            pagamento e sistemas de gestão.
+          </p>
+          <button data-menssage="esse é o terceiro botao">
+            <strong class="circle">
+              <strong class="icon arrow"></strong>
+            </strong>
+            <strong class="text">Saiba mais</strong>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-----------servico fim---------->
+
+    <!-----------servicos responsivo começo---------->
+    <section aria-labelledby="seção serviços mobile" id="servicos-mobile">
+      <div data-aos="fade-up" class="servicosCarro servicos-mobile">
+        <div aria-describedby="bloco um" class="servicos-card">
+          <img src="img/servico.1.svg" alt="prédio" />
+          <h2>Sites Institucionais</h2>
+          <p>
+            Criamos sites que possuem a Alma e DNA da sua empresa, de forma
+            única e desenhados exclusivamente para a sua marca. Tudo pensado
+            por profissionais dedicados a entender e comunicar com
+            assertividade para o seu público-alvo.
+          </p>
+        </div>
+        <div aria-describedby="bloco dois" class="servicos-card">
+          <img src="img/servico.2.svg" alt="lampada" />
+          <h2>Sites Responsivos</h2>
+          <p>
+            Criamos sites com a última tecnologia disponível para sua
+            segurança. Nossos projetos são baseados na tecnologia responsiva
+            criando uma versão para cada dispositivo: celular, tablet e
+            desktop.
+          </p>
+        </div>
+        <div aria-describedby="bloco tres" class="servicos-card">
+          <img src="img/servico.3.svg" alt="carrinho de compras" />
+          <h2>Sites E-commerce</h2>
+          <p>
+            Criamos sites de lojas virtuais que permitem a venda de produtos
+            ou serviços pela internet, incluindo integrações com meios de
+            pagamento e sistemas de gestão.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-----------servicos responsivo fim---------->
+
+    <!-----------meu serv começo---------->
+    <section aria-labelledby="seção serviços de suporte" id="meuserv" class="site">
+      <div class="servicos">
+        <div data-aos="fade-right" class="servicos-tabela-cont">
+          <div data-aos="fade-right" class="servicos-titulo">
+            <h2>Nossos <span>Serviços</span></h2>
+            <p>Se liga no que a Web de quebrada tem para o seu negócio!</p>
+          </div>
+          <div class="servicos-tabela">
+            <div class="tabela">
+              <div aria-describedby="bloco um" class="aos-item" data-aos="fade-right">
+                <img src="img/meu-serv-1.svg" alt="Lista" class="img-tabela-oficial" />
+                <img src="img/serv.mb1.svg" alt="Lista" class="img-tabela-responsive" />
+                <h3>Manutenção e Suporte</h3>
+                <p>
+                  Oferecemos serviços de manutenção, atualização e suporte
+                  técnico para garantir a continuidade e estabilidade do site
+                  após sua criação.
+                </p>
+              </div>
+
+              <div aria-describedby="bloco dois" class="aos-item" data-aos="fade-left">
+                <img src="img/meu-serv-2.svg" alt="Marketing" class="img-tabela-oficial" />
+                <img src="img/serv-mb2.svg" alt="Lista" class="img-tabela-responsive" />
+                <h3>Marketing Digital</h3>
+                <p>
+                  Orientação e suporte aos clientes em relação a estratégias
+                  de marketing digital, e campanhas de anúncios online.
+                </p>
+              </div>
+
+              <div aria-describedby="bloco tres" class="aos-item" data-aos="fade-right">
+                <img src="img/meu-serv-3.svg" alt="Estrelas" class="img-tabela-oficial" />
+                <img src="img/serv-mb3.svg" alt="Lista" class="img-tabela-responsive" />
+                <h3>Tecnologia de ponta</h3>
+                <p>
+                  Sites em WordPress,Joomla, Drupal e Tecnologias atuais com
+                  atualizações de segurança e correção.
+                </p>
+              </div>
+            </div>
+            <div class="tabela-btn">
+              <a role="link" href="#">Confira</a>
+            </div>
+          </div>
+        </div>
+        <div data-aos="fade-left" class="servicos-img">
+          <img src="img/office.people.png" alt="pessoas conversando em ambiente de trabalho" />
+        </div>
+      </div>
+    </section>
+    <!----------- meu serv fim---------->
+
+    <!-----------sobre começo---------->
+    <section aria-labelledby="seção de sobre" id="sobre" class="site">
+      <div class="sobre site">
+        <img data-aos="fade-right" src="img/imgsobre.png" alt="um grupo de pessoas sobrepondo as suas maõs sobre as outras" />
+
+        <div data-aos="fade-left" class="sobre-info">
+          <h2>Um pouco <span>Sobre nós</span></h2>
+          <p>
+            A <b>Web de Quebrada</b> é uma agência de desenvolvimento web que
+            cria sites institucionais e e-commerce. Desde a nossa fundação,
+            nos dedicamos a fornecer soluções de alta qualidade para empresas
+            de diversos segmentos, sempre com um olhar atento às tendências e
+            necessidades do mercado.
+          </p>
+          <a role="link" href="#" class="sobre-btn">Ler mais</a>
+        </div>
+      </div>
+    </section>
+    <!----------- sobre fim---------->
+
+    <!-----------portifolio começo---------->
+    <section aria-labelledby="seção do portifolio" id="portfolio" data-aos="fade-up">
+      <div class="portfolio-titulo">
+        <h2>Conheça o nosso <span>Portfólio</span></h2>
+        <p>Veja alguns de nossos projetos publicados</p>
+      </div>
+
+      <div class="portfolio-cont">
+        <div class="portfolio">
+          <div>
+            <img src="img/seta.svg" alt="seta laranja apontando para baixo" />
+          </div>
+          <div>
+            <img src="img/seta.svg" alt="seta laranja apontando para baixo" />
+          </div>
+          <div>
+            <img src="img/seta.svg" alt="seta laranja apontando para baixo" />
+          </div>
+          <div>
+            <img src="img/seta.svg" alt="seta laranja apontando para baixo" />
+          </div>
+        </div>
+        <div>
+          <a role="link" href="#" class="btnConfira">Confira</a>
+        </div>
+      </div>
+    </section>
+    <!----------- portifolio fim---------->
+
+    <!-----------avaloação dos clientes---------->
+    <section aria-labelledby="seção avaliação clientes" data-aos="fade-up">
+      <div class="site">
+        <div class="clientes-cont">
+          <div class="clientes-titulo">
+            <h2>Nossos <span>Clientes</span></h2>
+            <p>
+              Veja alguns depoimentos de clientes satisfeitos com o serviço
+              prestado.
+            </p>
+
+          </div>
+          <div class="clientes clientesCarro">
+            <div class="client">
+              <img src="img/cliente.1.svg" class="cliente-perfil" alt="foto de perfil de um cliente do site" />
+              <h3>Nome</h3>
+              <p>
+                A empresa de desenvolvimento de sites foi incrível em criar um
+                site responsivo e de alta qualidade para a minha empresa.
+              </p>
+            </div>
+            <div class="client">
+              <img src="img/cliente.2.svg" class="cliente-perfil" alt="foto de perfil de um cliente do site" />
+              <h3>Nome</h3>
+              <p>
+                A empresa de desenvolvimento de sites foi incrível em criar um
+                site responsivo e de alta qualidade para a minha empresa.
+              </p>
+            </div>
+            <div class="client">
+              <img src="img/cliente.3.svg" class="cliente-perfil" alt="foto de perfil de um cliente do site" />
+              <h3>Nome</h3>
+              <p>
+                A empresa de desenvolvimento de sites foi incrível em criar um
+                site responsivo e de alta qualidade para a minha empresa.
+              </p>
+            </div>
+            <div class="client">
+              <img src="img/cliente.4.svg" class="cliente-perfil" alt="foto de perfil de um cliente do site" />
+              <h3>Nome</h3>
+              <p>
+                A empresa de desenvolvimento de sites foi incrível em criar um
+                site responsivo e de alta qualidade para a minha empresa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!----avaloação dos clientes fim---------->
+
+    <!-----------modal de volta ao topo--------->
+    <a role="link" href="#" id="myLink" title="Voltar para o topo">
+      <img class="seta-topo" src="img/seta-topo.svg" alt="seta apontando para cima">
+    </a>
+    <!-----------modal de volta ao topo--------->
+  </main>
+
+  <!-----------rodape começo--------->
+  <footer aria-labelledby="rodapé">
+    <div class="site">
+      <div class="rodape-cont">
+        <div class="rodape-info">
+          <div class="rodape-1">
+            <!--1-->
+            <div>
+              <img src="img/logo.white.svg" alt="logo da empresa escrito web de quebrada" />
+            </div>
+            <p>
+              “Construindo sua presença online, fortalecendo causas nobres”
+            </p>
+            <div class="rodape-1-rede">
+              <a role="link" href="#">LinkedIn</a>
+              <a role="link" href="#">WhatsApp</a>
+              <a role="link" href="#">Instagram</a>
+            </div>
+          </div>
+          <div class="rodape-contatos">
+            <div class="rodape-2">
+              <!-----------seção dos contatos--------->
+              <h3>Contato</h3>
+              <ul>
+                <li>
+                  <a role="link" href=""><img src="img/telemarketing-rod.svg" alt="icone,cabeça com um headset" />Suporte</a>
+                </li>
+                <li>
+                  <a role="link" href=""><img src="img/email-rod.svg" alt="icone,envolepe de email" />E-mail</a>
+                </li>
+                <li>
+                  <a role="link" href=""><img src="img/local-rod.svg" alt="icone,localização" />São
+                    Miguel</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rodape-3">
+              <!-----------seção do menu--------->
+              <h3>Menu</h3>
+              <ul>
+                <li>
+                  <a role="link" href="#"><img src="img/casinha-rod.svg" alt="icone,casa" />Home</a>
+                </li>
+                <li>
+                  <a role="link" href="#"><img src="img/sobre-rod.svg" alt="icone,grupo de pessoas" />Sobre
+                    nós</a>
+                </li>
+                <li>
+                  <a role="link" href="#"><img src="img/serv-rod.svg" alt="icone,papel com lista" />Serviços</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="rodape-4">
+          <h3>Web de Quebrada &copy; 2023</h3>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-----------rodape fim--------->
+
+  <!-----------Aqui começamos os javascript--------->
+
+  <!--pasta js-->
+  <script src="./script/aos.js"></script>
+  <script src="./script/animacoes.js"></script>
+
+  <!--------------------->
+     <!--btn dark mode-->
+  <!--------------------->
+</body>
+<script>
+  const btn = document.querySelector('.btn');
+  const dark = document.querySelector('body');
+  btn.onclick = function () {
+    this.classList.toggle('active');
+    dark.classList.toggle('active');
+  }
+</script>
+
+
+</html>
