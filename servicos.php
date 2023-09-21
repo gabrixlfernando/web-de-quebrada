@@ -67,68 +67,33 @@ $listar = $listaServico->Listar();
 
   <main>
 
-    <section class="servico site">
 
-      <div id="servicos-txt">
-        <p id="texto1">Com problemas? </p>
-        <p id="texto2">Nós temos a solução!</p>
-        <p id="texto3">Se liga no que a Quebrada<br /> tem para seu negócio!</p>
+    <section class="site">
+
+      <div class="serv-txt">
+        <h2>Nós temos a <span>solução!</span></h2>
+        <p>Se liga no que a Quebrada tem para seu negócio</p>
       </div>
 
-      <?php foreach ($listar as $linha) : ?>
-        <div id="tabela">
 
-          <div class="caixa-teste" id="border1">
-            <img id="e-comerce" src="img/<?php echo $linha['imgServico'] ?>" alt="<?php echo $linha['altServico'] ?>" class="img-tabela-oficial">
-            <h2> <?php echo $linha['tituloServico'] ?></h2>
+      <section class="serv-wrapper">
+
+        <?php foreach ($listar as $linha) : ?>
+          <article class="serv-card">
+
+            <img class="" src="img/<?php echo $linha['imgServico'] ?>" alt="<?php echo $linha['altServico'] ?>" alt="Lista">
+            <h2><?php echo $linha['tituloServico'] ?></h2>
             <p>
               <?php echo $linha['textServico'] ?>
             </p>
-            <div>
-              <a role="link" href="<?php echo $linha['linkServico'] ?>" target="_blank" class="slogan-btn slogan-btn-cor1">Contratar</a>
-            </div>
-
-          </div>
+            <a role="link" href="<?php echo $linha['linkServico'] ?>" target="_blank" class="slogan-btn slogan-btn-cor1">Contratar</a>
+          </article>
         <?php endforeach; ?>
 
+      </section>
 
+    </section>
 
-        <!-- <div class="caixa-teste" id="border2">
-            <img id="apps" src="img/apps.png" alt="Marketing" class="img-tabela-oficial">     
-            <h2>Apps</h2>
-            <p>
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit animi error qui porro recusandae accusamus, minus perferendis officiis dolorum quia exercitationem odit obcaecati omnis, totam quibusdam incidunt voluptatibus ducimus autem?
-            </p>
-            <div>
-              <a role="link" href="formulario.php" target="_blank" class="slogan-btn slogan-btn-cor2">Contratar</a>
-            </div>
-          </div>    
-      </div> -->
-
-        <!-- <div id="tabela">
-          <div class="caixa-teste" id="border3">
-            <img id="site" src="img/design-do-site.png" alt="Estrelas" class="img-tabela-oficial">
-      
-            <h2>Sites</h2>
-            <p>
-             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates id unde, eum vero repellat consectetur alias nihil ratione amet facere cum tenetur nam cumque voluptatem dolores, ex quia asperiores! Dignissimos!
-            </p>
-            <div>
-              <a role="link" href="formulario.php" target="_blank" class="slogan-btn slogan-btn-cor3">Contratar</a>
-            </div>
-          </div>
-
-          <div class="caixa-teste" id="border4">
-            <img id="ux" src="img/design-ux.png" alt="Estrelas" class="img-tabela-oficial"> 
-            <h2>Ui/Ux design</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum itaque dicta impedit nobis necessitatibus, laudantium ratione expedita suscipit ex. Molestiae obcaecati pariatur molestias voluptatibus nihil at eligendi ab temporibus voluptate.
-            </p>
-            <div>
-              <a role="link" href="formulario.php" target="_blank" class="slogan-btn slogan-btn-cor4">Contratar</a>
-            </div>
-          </div>  
-        </div> -->
 
     </section>
 
