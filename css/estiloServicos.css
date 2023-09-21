@@ -72,7 +72,7 @@ main {
   flex-grow: 1;
   line-height: 1.1;
   letter-spacing: 1px;
-  text-align: justify;
+  /* text-align: justify; */
 }
 
 /*#endregion Servicos Página*/

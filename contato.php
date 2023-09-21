@@ -1,3 +1,15 @@
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 
 //Import PHPMailer classes into the global namespace
@@ -34,7 +46,7 @@ if (isset($_POST['email'])) {
     //Recipients Destinatário do email, quem receberá
 
     $mail->setFrom('webdequebrada@smpsistema.com.br', 'Web de Quebrada'); //quem dispara o email, envia o email e ao lado 'Site Agencia' é o assunto
-    $mail->addAddress('webdequebrada@gmail.com');  // quem recebe o email, parecido com o "para" dos emails
+    $mail->addAddress('biel_nando2012@hotmail.com');  // quem recebe o email, parecido com o "para" dos emails
 
     // $mail->addAddress('ellen@example.com');              
     // $mail->addReplyTo('info@example.com', 'Information');
@@ -54,6 +66,28 @@ if (isset($_POST['email'])) {
     $email = $_POST['email'];
     $tel = $_POST['tel'];
     $mens = $_POST['mens'];
+
+    // salvar dados contato no banco de dados
+
+
+    require_once('admin/class/contato.php');
+
+    $contato = new ContatoClass();
+    $contato->nomeContato = $nome;
+    $contato->emailContato = $email;
+    $contato->numContato = $tel;
+    $contato->mensContato = $mens;
+
+
+  date_default_timezone_set('America/Sao_Paulo');
+    $contato->dataContato = date('Y-m-d');
+    $contato->horaContato = date('H:i:s');
+    $contato->InserirContato();
+
+
+    // FIM salvar dados contato no banco de dados
+
+
 
     $mail->CharSet = 'UTF-8';
     $mail->isHTML(true); //Set email format to HTML

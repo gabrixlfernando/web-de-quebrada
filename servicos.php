@@ -78,7 +78,7 @@ $listar = $listaServico->Listar();
 
       <section class="serv-wrapper">
 
-        <?php foreach ($listar as $linha) : ?>
+        <?php foreach (array_slice($listar, 0, 3)  as $linha) : ?>
           <article class="serv-card">
 
             <img class="" src="img/<?php echo $linha['imgServico'] ?>" alt="<?php echo $linha['altServico'] ?>" alt="Lista">
