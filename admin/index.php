@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel de Administração</title>
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -38,6 +39,8 @@
         </nav>
 
         <main class="content">
+
+        <h1>Página <?php echo @$_GET['p']?></h1>
             <?php
             $pagina = @$_GET['p'];
 
@@ -76,6 +79,9 @@
 
         </main>
     </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

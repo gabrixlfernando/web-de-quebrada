@@ -6,7 +6,7 @@ class ServicoClass
 {
     // ATRIBUTOS
     public $idServico;
-    public $imgServioco;
+    public $imgServico;
     public $altServico;
     public $textServico;
     public $linkServico;
