@@ -125,11 +125,65 @@ body {
 .content {
     flex: 1;
     padding: 20px;
-    background: linear-gradient(45deg, #c2c2c2, transparent);
+    background: #fff;
     
 }
 
 
 table img{
     width: 20%;
+}
+
+
+
+
+/* Formulario INSERIR SERVIÇO */
+
+.card-info{
+    /* background: linear-gradient(45deg, #d8d8d8, transparent); */
+    border: none;
+}
+
+form{
+    width: 50%;
+    margin: 0 auto;
+    /* padding: 20px;
+    border-radius: 10px 25px;
+    background: linear-gradient(248deg, white, transparent); */
+    /* box-shadow: 10px 9px 19px 0px rgba(0,0,0,0.45); */
+}
+
+form div div div label img{
+    width: 30%;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    margin-bottom: 10px;
+    resize: none;
+}
+.checkbox-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.submit-button {
+    display: block;
+    margin-top: 10px;
+}
+
+.checktitu{
+    display: flex;
+    flex-direction: row;
 }

@@ -16,7 +16,7 @@ $listar = $listaServico->Listar();
 </ul> -->
 
 
-
+<h2><a href="index.php?p=servico&s=inserir">Novo Serviço</a></h2>
 
 <div>
     <table class="table table-dark table-bordered border-primary">
