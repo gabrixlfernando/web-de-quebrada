@@ -11,6 +11,14 @@
 </head>
 
 <body>
+
+
+
+
+
+
+
+
     <header class="topbar">
         <div>
             <img src="img/logodark.svg" alt="">
@@ -25,7 +33,9 @@
     </header>
 
     <div class="wrapper">
-        <nav class="sidebar">
+
+
+         <nav class="sidebar">
             <div>
 
             </div>
@@ -36,46 +46,48 @@
                 <li><a href="index.php?p=contato">Contato</a></li>
                 <li><a href="index.php?p=configuracoes">Configurações</a></li>
             </ul>
-        </nav>
-
-        <main class="content">
-
-        <h1>Página <?php echo @$_GET['p']?></h1>
-            <?php
-            $pagina = @$_GET['p'];
-
-            switch ($pagina) {
-                case 'servico';
-                    # code...
-                    require_once('servico/servico.php');
-                    break;
-                case 'sobre';
-                    # code...
-                    require_once('sobre/sobre.php');
-                    break;
-                case 'site';
-                    # code...
-                    require_once('site/site.php');
-                    break;
-                case 'contato';
-                    # code...
-                    require_once('contato/contato.php');
-                    break;
-                case 'configuracoes';
-                    # code...
-                    require_once('configuracoes/configuracoes.php');
-                    break;
-
-                default:
-                    # code...
-                    require_once('dashboard/dashboard.php');
-                    break;
-            }
+        </nav> 
+        <main class="container">
+            <div class="row">
 
 
-            ?>
+
+                <h1>Página <?php echo @$_GET['p'] ?></h1>
+                <?php
+                $pagina = @$_GET['p'];
+
+                switch ($pagina) {
+                    case 'servico';
+                        # code...
+                        require_once('servico/servico.php');
+                        break;
+                    case 'sobre';
+                        # code...
+                        require_once('sobre/sobre.php');
+                        break;
+                    case 'site';
+                        # code...
+                        require_once('site/site.php');
+                        break;
+                    case 'contato';
+                        # code...
+                        require_once('contato/contato.php');
+                        break;
+                    case 'configuracoes';
+                        # code...
+                        require_once('configuracoes/configuracoes.php');
+                        break;
+
+                    default:
+                        # code...
+                        require_once('dashboard/dashboard.php');
+                        break;
+                }
 
 
+                ?>
+
+            </div>
 
         </main>
     </div>

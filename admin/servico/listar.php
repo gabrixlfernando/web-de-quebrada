@@ -16,12 +16,12 @@ $listar = $listaServico->Listar();
 </ul> -->
 
 
-<h2><a href="index.php?p=servico&s=inserir">Novo Serviço</a></h2>
+<h2><a href="index.php?p=servico&s=inserir" class="btn btn-dark">Novo Serviço</a></h2>
 
 <div>
-    <table class="table table-dark table-bordered border-primary">
+    <table class="table table-light table-borderless">
         <caption>LISTAR SERVIÇOS</caption>
-        <thead>
+        <thead class="table-dark">
             <tr>
                 <th>ID</th>
                 <th>TITULO</th>
@@ -42,13 +42,13 @@ $listar = $listaServico->Listar();
                 <tr>
                     <td><?php echo $linha['idServico'] ?></td>
                     <td><?php echo $linha['tituloServico'] ?></td>
-                    <td><?php echo '<img src="../img/' . $linha['imgServico'] . '" alt="' . $linha['altServico'] . '">' ?></td>
+                    <td style="width: 10%;"><?php echo '<img src="../img/' . $linha['imgServico'] . '" alt="' . $linha['altServico'] . '">' ?></td>
                     <td><?php echo $linha['altServico'] ?></td>
                     <td><?php echo $linha['textServico'] ?></td>
                     <td><?php echo $linha['linkServico'] ?></td>
                     <td><?php echo $linha['statusServico'] ?></td>
-                    <td><a href="index.php?p=servico&s=atualizar"> ATUALIZAR</td>
-                    <td><a href="index.php?p=servico&s=atualizar"> DESATIVAR</td>
+                    <td><a href="index.php?p=servico&s=atualizar" class="btn btn-outline-success"> ATUALIZAR</td>
+                    <td><a href="index.php?p=servico&s=atualizar" class="btn btn-outline-danger"> DESATIVAR</td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

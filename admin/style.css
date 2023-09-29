@@ -122,16 +122,10 @@ body {
 }
 
 /* Estilos da área de administração (conteúdo) */
-.content {
-    flex: 1;
-    padding: 20px;
-    background: #fff;
-    
-}
 
 
 table img{
-    width: 20%;
+    width: 40%;
 }
 
 
