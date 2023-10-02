@@ -147,8 +147,10 @@ form{
     /* box-shadow: 10px 9px 19px 0px rgba(0,0,0,0.45); */
 }
 
-form div div div label img{
+form div div div img{
+    cursor: pointer;
     width: 30%;
+    margin: 20px;
 }
 
 label {
