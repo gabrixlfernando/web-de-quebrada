@@ -29,13 +29,11 @@ class ServicoClass
         textServico,
         linkServico,
         statusServico) 
-    VALUES('".$this->tituloServico."', '".$this->imgServico."', '".$this->altServico."','".$this->textServico."','".$this->linkServico."','".$this->statusServico."')";
+    VALUES('".$this->tituloServico."', '".$this->imgServico."', '".$this->altServico."','".$this->textServico."','".$this->linkServico."','".$this->statusServico."');";
         $conn = Conexao::LigarConexao();
         $conn->exec($query);
-        echo"<script document.location='index.php?p=servico'></script>";
+        echo "<script>document.location='index.php?p=servico'</script>";
     }
-    
-
 }
 
 

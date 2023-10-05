@@ -1,11 +1,11 @@
-<?php
+  <?php
 
-if (isset($_POST['titulo'])) {
+if (isset($_POST['tituloServico'])) {
 
 
     require_once('class/servico.php');
 
-    $tituloSerivo = $_POST['tituloServico'];
+    $tituloServico = $_POST['tituloServico'];
     $textServico = $_POST['textServico'];
     $linkServico = $_POST['linkServico'];
     $statusServico = $_POST['statusServico'];
@@ -13,33 +13,34 @@ if (isset($_POST['titulo'])) {
     $arquivo = $_FILES['imgServico'];
 
     if ($arquivo['error']) {
-        throw new Exception(message: 'Error' . $arquivo['error']);
+        throw new Exception('Error' . $arquivo['error']);
     }
 
-    if (move_uploaded_file($arquivo['tmp_name'], '../img/servico' . $arquivo['name'])) {
+    if (move_uploaded_file($arquivo['tmp_name'], '../img/servico/' . $arquivo['name'])) {
         $imgServico = 'servico/' . $arquivo['name'];
     } else {
-        throw new Exception(message: 'Erro: Não foi possivel realizar o upload da imagem.');
+        throw new Exception('Erro: Não foi possivel realizar o upload da imagem.');
     }
 
     $servico = new ServicoClass();
 
     $servico->tituloServico = $tituloServico;
     $servico->imgServico = $imgServico;
-    $servico->altServico = $altServico;
+    $servico->altServico = $tituloServico;
     $servico->textServico = $textServico;
     $servico->linkServico = $linkServico;
     $servico->statusServico = $statusServico;
 
 
-    $servico->Inserir();
-   
+     $servico->Inserir();
 
 }
 
 
 
-?>
+?>  
+
+
 
 
 <div class="col-11">
@@ -53,13 +54,13 @@ if (isset($_POST['titulo'])) {
                 <div class="row">
                     <div class="col-4">
                         <label for="imagem">Imagem: </label>
-                        <img src="img/1695213.png" id="imagemExibida" name="imgServico">
-                        <input type="file" id="inputImagem" style="display: none;" required>
+                        <img src="img/1695213.png" id="imagemExibida" >
+                        <input type="file" id="inputImagem" style="display: none;" name="imgServico" required>
                     </div>
 
                     <div class="col-8">
                         <input type="text" id="tituloServico" name="tituloServico" class="form-control" placeholder="Titulo" required>
-                        <label class="form-check-label" for="flexSwitchCheckReverse">Ativo: <input type="checkbox" class="form-check-input" name="statusServico" id="statusServico" value="1" required></label>
+                        <label class="form-check-label" for="flexSwitchCheckReverse">Ativo: <input type="checkbox" class="form-check-input" name="statusServico" id="statusServico" value="ATIVO" required></label>
                         <textarea id="textServico" name="textServico" class="form-control" placeholder="Insira o texto do serviço aqui." required></textarea>
                         <input type="text" name="linkServico" id="linkServico" class="form-control" placeholder="Link" required>
                         <button type="submit" class="btn btn-dark">Inserir Serviço</button>
@@ -98,4 +99,3 @@ if (isset($_POST['titulo'])) {
     });
 </script>
 
-<script document.location='index.php?p=servico'></script>

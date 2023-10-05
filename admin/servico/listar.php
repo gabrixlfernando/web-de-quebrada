@@ -18,7 +18,8 @@ $listar = $listaServico->Listar();
 
 <h2><a href="index.php?p=servico&s=inserir" class="btn btn-dark">Novo Serviço</a></h2>
 
-<div>
+<div class="container">
+    <div class="table-responsive">
     <table class="table table-light table-borderless">
         <caption>LISTAR SERVIÇOS</caption>
         <thead class="table-dark">
@@ -53,4 +54,5 @@ $listar = $listaServico->Listar();
             <?php endforeach; ?>
         </tbody>
     </table>
+    </div>
 </div>
