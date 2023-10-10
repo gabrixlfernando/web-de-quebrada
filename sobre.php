@@ -1,3 +1,13 @@
+<?php
+
+require_once('admin/class/sobre.php');
+$listaSobre = new SobreClass();
+$listar = $listaSobre->Listar();
+//var_dump($listar); 
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -44,20 +54,22 @@
     <main>
         <section>
             <div class="pgSobre site">
-                <h2>Sobre nós</h2>
+                <h2>Sobre Nós</h2>
                 <div>
+                <?php foreach ($listar as $linha) : ?>
                     <div>
-                        <h3>Valores</h3>
-                        <p>Integridade: Agimos com honestidade, transparência e ética em todos os aspectos dos nossos negócios.Nos comprometemos a manter altos padrões de integridade em todas as nossas interações.</p>
+                        <h3><?php echo $linha['tituloSobre'] ?></h3>
+                        <p><?php echo $linha['textSobre'] ?></p>
                     </div>
-                    <div>
+                    <?php endforeach ?>
+                    <!-- <div>
                         <h3>Missão</h3>
                         <p>Queremos ser o parceiro de confiança dos nossos clientes, trabalhando lado a lado para alcançar os seus objetivos e proporcionar experiências memoráveis.</p>
                     </div>
                     <div>
                         <h3>Visão</h3>
                         <p>Buscamos inovar e desenvolver melhores soluções para nossos clientes,buscando fornecer as mais atualizadas e inovadoras soluções.</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

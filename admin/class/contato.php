@@ -29,5 +29,14 @@ class ContatoClass{
 
  }
 
+ // MÉTODOS
+ public function listar(){
+   $query = "SELECT * FROM tblcontato;";
+   $conn = Conexao::LigarConexao();
+   $resultado = $conn->query($query);
+   $lista = $resultado->fetchAll();
+   return $lista;
+}
+
 
 }

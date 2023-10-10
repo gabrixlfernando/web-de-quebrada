@@ -40,11 +40,11 @@
 
             </div>
             <ul>
-                <li><a href="index.php?p=site">Site</a></li>
                 <li><a href="index.php?p=servico">Serviços</a></li>
                 <li><a href="index.php?p=sobre">Sobre</a></li>
                 <li><a href="index.php?p=contato">Contato</a></li>
-                <li><a href="index.php?p=configuracoes">Configurações</a></li>
+                <li><a href="index.php?p=portifolio">Portifólio</a></li>
+                <li><a href="index.php?p=avaliacoes">Avaliações</a></li>
             </ul>
         </nav> 
         <main class="container">
@@ -65,17 +65,17 @@
                         # code...
                         require_once('sobre/sobre.php');
                         break;
-                    case 'site';
+                    case 'avaliacoes';
                         # code...
-                        require_once('site/site.php');
+                        require_once('avaliacoes/avaliacoes.php');
                         break;
                     case 'contato';
                         # code...
                         require_once('contato/contato.php');
                         break;
-                    case 'configuracoes';
+                    case 'portifolio';
                         # code...
-                        require_once('configuracoes/configuracoes.php');
+                        require_once('portifolio/portifolio.php');
                         break;
 
                     default:

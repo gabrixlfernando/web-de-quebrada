@@ -1,5 +1,14 @@
 <?php
 
+require_once('admin/class/portifolio.php');
+$listaPortifolio = new PortifolioClass();
+$listar = $listaPortifolio->Listar();
+//var_dump($listar); 
+
+?>
+
+<?php
+
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -392,7 +401,13 @@ if (isset($_POST['email'])) {
 
       <div class="portfolio-cont">
         <div class="portfolio">
-          <div>
+          <?php foreach ($listar as $linha) : ?>
+            <div>
+              <img class="portfolio-img" src="img/<?php echo $linha['imgPortifolio'] ?>" alt="<?php echo $linha['altPortifolio'] ?>">
+              <img class="portfolio-icon" src="img/portfolio-seta.svg" alt="" />
+            </div>
+          <?php endforeach ?>
+          <!-- <div>
             <img class="portfolio-img" src="img/portfolio-img-1.png" alt="">
             <img class="portfolio-icon" src="img/portfolio-seta.svg" alt="" />
           </div>
@@ -407,7 +422,7 @@ if (isset($_POST['email'])) {
           <div>
             <img class="portfolio-img" src="img/portfolio-img-4.png" alt="">
             <img class="portfolio-icon" src="img/portfolio-seta.svg" alt="" />
-          </div>
+          </div> -->
         </div>
 
       </div>
