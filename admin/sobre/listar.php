@@ -7,7 +7,7 @@ $listar = $listaSobre->Listar();
 
 ?>
 
-<h2><a href="index.php?p=sobre&sb=inserir" class="btn btn-dark">Novo Serviço</a></h2>
+<h2><a href="index.php?p=sobre&sb=inserir" class="btn btn-dark">Novo Sobre</a></h2>
 
 <div class="container">
     <div class="table-responsive">
