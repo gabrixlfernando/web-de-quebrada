@@ -14,7 +14,17 @@ class ServicoClass
     public $statusServico;
 
     // MÉTODOS
-    public function listar(){
+    public function __construct($id = false)
+    {
+        if ($id) {
+            $this->idServico = $id;
+            $this->Carregar();
+        }
+    }
+
+
+    public function listar()
+    {
         $query = "SELECT * FROM tblservico WHERE statusServico ='ATIVO' ORDER BY tituloServico ASC;";
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($query);
@@ -22,20 +32,60 @@ class ServicoClass
         return $lista;
     }
 
-    public function Inserir(){
+    public function Inserir()
+    {
         $query = "INSERT INTO tblservico(tituloServico,
         imgServico,
         altServico,
         textServico,
         linkServico,
         statusServico) 
-    VALUES('".$this->tituloServico."', '".$this->imgServico."', '".$this->altServico."','".$this->textServico."','".$this->linkServico."','".$this->statusServico."');";
+    VALUES('" . $this->tituloServico . "', '" . $this->imgServico . "', '" . $this->altServico . "','" . $this->textServico . "','" . $this->linkServico . "','" . $this->statusServico . "');";
         $conn = Conexao::LigarConexao();
         $conn->exec($query);
         echo "<script>document.location='index.php?p=servico'</script>";
     }
+
+
+    public function Carregar()
+    {
+        $query = "SELECT * FROM tblservico WHERE idServico = " . $this->idServico;;
+        $conn = Conexao::LigarConexao();
+        $resultado = $conn->query($query);
+        $lista = $resultado->fetchAll();
+
+
+        foreach ($lista as $linha) {
+            $this->tituloServico     =   $linha['tituloServico'];
+            $this->imgServico        =   $linha['imgServico'];
+            $this->altServico        =   $linha['altServico'];
+            $this->textServico       =   $linha['textServico'];
+            $this->linkServico       =   $linha['linkServico'];
+            $this->statusServico     =   $linha['statusServico'];
+        }
+    }
+
+    public function Atualizar(){
+        $query = "UPDATE tblservico SET tituloServico='" . $this->tituloServico . "',
+        imgServico='" . $this->imgServico . "',
+        altServico='" . $this->altServico . "',
+        textServico='" . $this->textServico . "',
+        linkServico='" . $this->linkServico . "',
+        statusServico='" . $this->statusServico . "' 
+        WHERE idServico = " . $this->idServico;;
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
+        echo "<script>document.location='index.php?p=servico'</script>";
+
+    }
+
+    public function Desativar(){
+        $query = "UPDATE tblservico SET 
+        statusServico='DESATIVADO' 
+        WHERE idServico = " . $this->idServico;;
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
+        echo "<script>document.location='index.php?p=servico'</script>";
+
+    }
 }
-
-
-
- 
