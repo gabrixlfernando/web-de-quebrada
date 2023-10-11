@@ -183,3 +183,15 @@ textarea {
     display: flex;
     flex-direction: row;
 }
+
+
+tbody tr td a i{
+    font-size: 30px;
+    color: red;
+    text-align: center;
+}
+
+tbody tr td a i:hover{
+    opacity: 0.7;
+    color: rgb(179, 0, 0);
+}

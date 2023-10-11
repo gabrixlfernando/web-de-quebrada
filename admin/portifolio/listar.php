@@ -43,7 +43,7 @@ $listar = $listaPortifolio->Listar();
                     <td><?php echo $linha['altPortifolio'] ?></td>
                     <td><?php echo $linha['statusPortifolio'] ?></td>
                     <td><a href="index.php?po=portifolio&s=atualizar" class="btn btn-outline-success"> ATUALIZAR</td>
-                    <td><a href="index.php?po=portifolio&s=desatiizar" class="btn btn-outline-danger"> DESATIVAR</td>
+                    <td><a href="index.php?po=portifolio&s=desatiizar"> <i class="fa-solid fa-trash-can"></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

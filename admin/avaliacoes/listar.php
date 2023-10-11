@@ -37,7 +37,7 @@ $listar = $listaAvaliacoes->Listar();
                     <td><?php echo $linha['textAvaliacao'] ?></td>
                     <td><?php echo $linha['statusAvaliacao'] ?></td>
                     <td><a href="index.php?p=avaliacoes&av=atualizar" class="btn btn-outline-success"> ATUALIZAR</td>
-                    <td><a href="index.php?p=avaliacoes&av=desativar" class="btn btn-outline-danger"> DESATIVAR</td>
+                    <td style="text-align: center;"><a href="index.php?p=avaliacoes&av=desativar"> <i class="fa-solid fa-trash-can"></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

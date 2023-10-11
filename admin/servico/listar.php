@@ -49,7 +49,7 @@ $listar = $listaServico->Listar();
                     <td><?php echo $linha['linkServico'] ?></td>
                     <td><?php echo $linha['statusServico'] ?></td>
                     <td><a href="index.php?p=servico&s=atualizar&id=<?php echo $linha['idServico'] ?>" class="btn btn-outline-success"> ATUALIZAR</td>
-                    <td><a href="index.php?p=servico&s=desativar&id=<?php echo $linha['idServico'] ?>" class="btn btn-outline-danger"> DESATIVAR</td>
+                    <td style="text-align: center;"><a href="index.php?p=servico&s=desativar&id=<?php echo $linha['idServico'] ?>" ><i class="fa-solid fa-trash-can"></i></i></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

@@ -34,7 +34,7 @@ $listar = $listaSobre->Listar();
                     <td><?php echo $linha['textSobre'] ?></td>
                     <td><?php echo $linha['statusSobre'] ?></td>
                     <td><a href="index.php?p=servico&s=atualizar" class="btn btn-outline-success"> ATUALIZAR</td>
-                    <td><a href="index.php?p=servico&s=desativar" class="btn btn-outline-danger"> DESATIVAR</td>
+                    <td style="text-align: center;"><a href="index.php?p=servico&s=desativar"> <i class="fa-solid fa-trash-can"></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
