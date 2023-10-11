@@ -30,4 +30,14 @@ class PortifolioClass
         echo "<script>document.location='index.php?p=portifolio'</script>";
     }
 
+    public function Desativar(){
+        $query = "UPDATE tblportfolio SET 
+        statusPortifolio='DESATIVADO' 
+        WHERE idPortifolio = " . $this->idPortifolio;;
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
+        echo "<script>document.location='index.php?p=portifolio'</script>";
+
+    }
+
 }

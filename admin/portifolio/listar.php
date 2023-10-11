@@ -42,8 +42,8 @@ $listar = $listaPortifolio->Listar();
                     <td style="width: 10%;"><?php echo '<img src="../img/' . $linha['imgPortifolio'] . '" alt="' . $linha['altPortifolio'] . '">' ?></td>
                     <td><?php echo $linha['altPortifolio'] ?></td>
                     <td><?php echo $linha['statusPortifolio'] ?></td>
-                    <td><a href="index.php?po=portifolio&s=atualizar" class="btn btn-outline-success"> ATUALIZAR</td>
-                    <td><a href="index.php?po=portifolio&s=desatiizar"> <i class="fa-solid fa-trash-can"></td>
+                    <td><a href="index.php?p=portifolio&po=atualizar&id=<?php echo $linha['idPortifolio'] ?>" class="btn btn-outline-success"> ATUALIZAR</td>
+                    <td><a href="index.php?p=portifolio&po=desativar&id=<?php echo $linha['idPortifolio'] ?>"> <i class="fa-solid fa-trash-can"></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

@@ -33,8 +33,8 @@ $listar = $listaSobre->Listar();
                     <td><?php echo $linha['tituloSobre'] ?></td>
                     <td><?php echo $linha['textSobre'] ?></td>
                     <td><?php echo $linha['statusSobre'] ?></td>
-                    <td><a href="index.php?p=servico&s=atualizar" class="btn btn-outline-success"> ATUALIZAR</td>
-                    <td style="text-align: center;"><a href="index.php?p=servico&s=desativar"> <i class="fa-solid fa-trash-can"></td>
+                    <td><a href="index.php?p=sobre&sb=atualizar&id=<?php echo $linha['idSobre'] ?>" class="btn btn-outline-success"> ATUALIZAR</td>
+                    <td style="text-align: center;"><a href="index.php?p=sobre&sb=desativar&id=<?php echo $linha['idSobre'] ?>"> <i class="fa-solid fa-trash-can"></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

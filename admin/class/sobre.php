@@ -30,4 +30,14 @@ class SobreClass
         echo "<script>document.location='index.php?p=sobre'</script>";
     }
 
+    public function Desativar(){
+        $query = "UPDATE tblSobre SET 
+        statusSobre='DESATIVADO' 
+        WHERE idSobre = " . $this->idSobre;;
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
+        echo "<script>document.location='index.php?p=sobre'</script>";
+
+    }
+
 }
