@@ -2,7 +2,7 @@
 
 require_once('class/portifolio.php');
 $listaPortifolio = new PortifolioClass();
-$listar = $listaPortifolio->Listar();
+$listar = $listaPortifolio->Listardes();
 //var_dump($listar); 
 
 ?>
@@ -15,10 +15,8 @@ $listar = $listaPortifolio->Listar();
     <li><a href="index.php?p=servico&s=atualizar">ATUALIZAR</a></li>
 </ul> -->
 
-<div class="btno">
-<h2><a href="index.php?p=portifolio&po=inserir" class="btn btn-dark">Novo Portifólio</a></h2>
-<h2><a href="index.php?p=portifolio&po=desativado" class="btn btn-dark">Portifólios Desativados</a></h2>
-</div>
+
+<h2><a href="index.php?p=portifolio" class="btn btn-dark">Portifólios Ativos</a></h2>
 
 <div class="container">
     <div class="table-responsive">
@@ -30,8 +28,8 @@ $listar = $listaPortifolio->Listar();
                 <th>IMG</th>
                 <th>ALT</th>
                 <th>STATUS</th>
-                <th> ATUALIZAR</th>
-                <th> DESATIVAR</th>
+                <th> ATIVAR</th>
+                
             </tr>
         </thead>
 
@@ -44,8 +42,8 @@ $listar = $listaPortifolio->Listar();
                     <td style="width: 10%;"><?php echo '<img src="../img/' . $linha['imgPortifolio'] . '" alt="' . $linha['altPortifolio'] . '">' ?></td>
                     <td><?php echo $linha['altPortifolio'] ?></td>
                     <td><?php echo $linha['statusPortifolio'] ?></td>
-                    <td><a href="index.php?p=portifolio&po=atualizar&id=<?php echo $linha['idPortifolio'] ?>" class="btn btn-outline-success"> ATUALIZAR</td>
-                    <td><a href="index.php?p=portifolio&po=desativar&id=<?php echo $linha['idPortifolio'] ?>"> <i class="fa-solid fa-trash-can"></td>
+                    <td><a href="index.php?p=portifolio&po=ativar&id=<?php echo $linha['idPortifolio'] ?>" class="btn btn-outline-success"> ATIVAR</td>
+                    
                 </tr>
             <?php endforeach; ?>
         </tbody>

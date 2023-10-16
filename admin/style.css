@@ -198,6 +198,18 @@ tbody tr td a i:hover{
     color: rgb(179, 0, 0);
 }
 
+.row h1{
+    margin-bottom: 40px;
+}
+
+.btno{
+    display: flex;
+}
+
+.btno h2{
+    padding-right: 20px;
+}
+
 
 
 

@@ -57,7 +57,7 @@ if (isset($_POST['altPortifolio'])) {
                     <div class="col-4">
                         <label for="imagem">Imagem: </label>
                         <img src="<?php echo '../img/' . $portifolio->imgPortifolio ?>" id="imagemExibida" >
-                        <input type="file" id="inputImagem" style="display: none;" name="imgPortifolio" required>
+                        <input type="file" id="inputImagem" style="display: none;" name="imgPortifolio">
                     </div>
 
                     <div class="col-8">

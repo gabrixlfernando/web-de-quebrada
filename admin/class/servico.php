@@ -23,9 +23,18 @@ class ServicoClass
     }
 
 
-    public function listar()
+    public function Listar()
     {
         $query = "SELECT * FROM tblservico WHERE statusServico ='ATIVO' ORDER BY tituloServico ASC;";
+        $conn = Conexao::LigarConexao();
+        $resultado = $conn->query($query);
+        $lista = $resultado->fetchAll();
+        return $lista;
+    }
+
+    public function Listardes()
+    {
+        $query = "SELECT * FROM tblservico WHERE statusServico ='DESATIVADO' ORDER BY tituloServico ASC;";
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($query);
         $lista = $resultado->fetchAll();
@@ -72,6 +81,16 @@ class ServicoClass
         textServico='" . $this->textServico . "',
         linkServico='" . $this->linkServico . "',
         statusServico='" . $this->statusServico . "' 
+        WHERE idServico = " . $this->idServico;;
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
+        echo "<script>document.location='index.php?p=servico'</script>";
+
+    }
+
+    public function Ativar(){
+        $query = "UPDATE tblservico SET 
+        statusServico='ATIVO' 
         WHERE idServico = " . $this->idServico;;
         $conn = Conexao::LigarConexao();
         $conn->exec($query);

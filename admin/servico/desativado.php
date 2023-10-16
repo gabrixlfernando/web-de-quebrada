@@ -2,24 +2,12 @@
 
 require_once('class/servico.php');
 $listaServico = new ServicoClass();
-$listar = $listaServico->Listar();
+$listar = $listaServico->Listardes();
 //var_dump($listar); 
 
 ?>
 
-<!-- <h1>PG Listar</h1>
-
-<ul>
-    <li><a href="index.php?p=servico&s=inserir">INSERIR</a></li>
-    <li><a href="index.php?p=servico&s=desativar">DESATIVAR</a></li>
-    <li><a href="index.php?p=servico&s=atualizar">ATUALIZAR</a></li>
-</ul> -->
-
-<div class="btno">
-<h2><a href="index.php?p=servico&s=inserir" class="btn btn-dark">Novo Serviço</a></h2>
-<h2><a href="index.php?p=servico&s=desativado" class="btn btn-dark">Serviços Desativados</a></h2>
-</div>
-
+<h2><a href="index.php?p=servico" class="btn btn-dark">Serviços Ativos</a></h2>
 
 <div class="container">
     <div class="table-responsive">
@@ -34,8 +22,7 @@ $listar = $listaServico->Listar();
                 <th>TEXTO</th>
                 <th>LINK</th>
                 <th>STATUS</th>
-                <th> ATUALIZAR</th>
-                <th> DESATIVAR</th>
+                <th> ATIVAR</th>
             </tr>
         </thead>
 
@@ -51,8 +38,7 @@ $listar = $listaServico->Listar();
                     <td><?php echo $linha['textServico'] ?></td>
                     <td><?php echo $linha['linkServico'] ?></td>
                     <td><?php echo $linha['statusServico'] ?></td>
-                    <td><a href="index.php?p=servico&s=atualizar&id=<?php echo $linha['idServico'] ?>" class="btn btn-outline-success"> ATUALIZAR</td>
-                    <td style="text-align: center;"><a href="index.php?p=servico&s=desativar&id=<?php echo $linha['idServico'] ?>" ><i class="fa-solid fa-trash-can"></i></i></td>
+                    <td><a href="index.php?p=servico&s=ativar&id=<?php echo $linha['idServico'] ?>" class="btn btn-outline-success"> ATIVAR</td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

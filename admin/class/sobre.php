@@ -12,8 +12,23 @@ class SobreClass
    
 
     // MÉTODOS
+    public function __construct($id = false)
+    {
+        if ($id) {
+            $this->idSobre = $id;
+            $this->Carregar();
+        }
+    }
+
     public function listar(){
         $query = "SELECT * FROM tblsobre WHERE statusSobre ='ATIVO';";
+        $conn = Conexao::LigarConexao();
+        $resultado = $conn->query($query);
+        $lista = $resultado->fetchAll();
+        return $lista;
+    }
+    public function Listardes(){
+        $query = "SELECT * FROM tblsobre WHERE statusSobre ='DESATIVADO';";
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($query);
         $lista = $resultado->fetchAll();
@@ -50,6 +65,16 @@ class SobreClass
         $query = "UPDATE tblsobre SET tituloSobre='" . $this->tituloSobre . "',
         textSobre='" . $this->textSobre . "',
         statusSobre='" . $this->statusSobre . "' 
+        WHERE idSobre = " . $this->idSobre;;
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
+        echo "<script>document.location='index.php?p=sobre'</script>";
+
+    }
+
+    public function Ativar(){
+        $query = "UPDATE tblsobre SET 
+        statusSobre='ATIVO' 
         WHERE idSobre = " . $this->idSobre;;
         $conn = Conexao::LigarConexao();
         $conn->exec($query);

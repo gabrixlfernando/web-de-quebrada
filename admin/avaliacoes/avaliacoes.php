@@ -16,4 +16,10 @@ if ($pagina == NULL) {
     if ($pagina == 'desativar') {
         require_once('desativar.php');
     }
+    if ($pagina == 'desativado') {
+        require_once('desativado.php');
+    }
+    if ($pagina == 'ativar') {
+        require_once('ativar.php');
+    }
 }

@@ -22,7 +22,7 @@
 
     <header class="topbar">
         <div>
-            <img src="img/logodark.svg" alt="">
+            <a href="index.php"><img src="img/logodark.svg" alt=""></a>
         </div>
 
         <!-- <h1>Painel de Administração</h1> -->

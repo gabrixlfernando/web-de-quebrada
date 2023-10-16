@@ -29,15 +29,6 @@ if (isset($_POST['tituloSobre'])) {
 ?>  
 
 
-
-
-
-
-
-
-
-
-
 <div class="col-11">
     <div class="card card-info">
 

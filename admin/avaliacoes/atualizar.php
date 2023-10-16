@@ -68,14 +68,14 @@ if (isset($_POST['altAvaliacao'])) {
                     <div class="col-4">
                         <label for="imagem">Imagem: </label>
                         <img src="<?php echo '../img/' . $avaliacao->imgAvaliacao ?>" id="imagemExibida" >
-                        <input type="file" id="inputImagem" style="display: none;" name="imgAvaliacao" required>
+                        <input type="file" id="inputImagem" style="display: none;" name="imgAvaliacao">
                     </div>
 
                     <div class="col-8">
                         <input type="text" id="altAvaliacao" name="altAvaliacao" class="form-control" placeholder="alt" required value="<?php echo $avaliacao->altAvaliacao ?>">
                         <label class="form-check-label" for="flexSwitchCheckReverse">Ativo: <input type="checkbox" class="form-check-input" name="statusAvaliacao" id="statusAvaliacao" value="<?php echo $avaliacao->statusAvaliacao ?>" required></label>
                         <textarea id="textAvaliacao" name="textAvaliacao" class="form-control" placeholder="Insira o texto da avaliação aqui." required><?php echo $avaliacao->textAvaliacao ?></textarea>
-                        <button type="submit" class="btn btn-dark">Inserir Avaliação</button>
+                        <button type="submit" class="btn btn-dark">Atualizar Avaliação</button>
 
                     </div>
 

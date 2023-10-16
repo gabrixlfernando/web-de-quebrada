@@ -24,6 +24,8 @@
 
 .card-body{
     text-align: center;
+    background: #000;
+    color: #fff;
 }
 
 .card-body h6{

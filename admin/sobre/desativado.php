@@ -2,14 +2,12 @@
 
 require_once('class/sobre.php');
 $listaSobre = new SobreClass();
-$listar = $listaSobre->Listar();
+$listar = $listaSobre->Listardes();
 //var_dump($listar); 
 
 ?>
-<div class="btno">
-<h2><a href="index.php?p=sobre&sb=inserir" class="btn btn-dark">Novo Sobre</a></h2>
-<h2><a href="index.php?p=sobre&sb=desativado" class="btn btn-dark">Sobre Desativados</a></h2>
-</div>
+
+<h2><a href="index.php?p=sobre" class="btn btn-dark">Sobre Ativos</a></h2>
 
 <div class="container">
     <div class="table-responsive">
@@ -21,8 +19,8 @@ $listar = $listaSobre->Listar();
                 <th>TITULO</th>
                 <th>TEXTO</th>
                 <th>STATUS</th>
-                <th> ATUALIZAR</th>
-                <th> DESATIVAR</th>
+                <th> ATIVAR</th>
+                
             </tr>
         </thead>
 
@@ -35,8 +33,7 @@ $listar = $listaSobre->Listar();
                     <td><?php echo $linha['tituloSobre'] ?></td>
                     <td><?php echo $linha['textSobre'] ?></td>
                     <td><?php echo $linha['statusSobre'] ?></td>
-                    <td><a href="index.php?p=sobre&sb=atualizar&id=<?php echo $linha['idSobre'] ?>" class="btn btn-outline-success"> ATUALIZAR</td>
-                    <td style="text-align: center;"><a href="index.php?p=sobre&sb=desativar&id=<?php echo $linha['idSobre'] ?>"> <i class="fa-solid fa-trash-can"></td>
+                    <td><a href="index.php?p=sobre&sb=ativar&id=<?php echo $linha['idSobre'] ?>" class="btn btn-outline-success"> ATIVAR</td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

@@ -56,7 +56,7 @@ if (isset($_POST['altPortifolio'])) {
 
                     <div class="col-8">
                         <input type="text" id="altPortifolio" name="altPortifolio" class="form-control" placeholder="Alt" required>
-                        <label class="form-check-label" for="flexSwitchCheckReverse">Ativo: <input type="checkbox" class="form-check-input" name="statusPortifolio" id="statusPortifolio" value="ATIVO" required></label>
+                        <label class="form-check-label" for="flexSwitchCheckReverse">Ativo: <input type="checkbox" class="form-check-input" name="statusPortifolio" id="statusPortifolio" value="ATIVO"></label>
                         <button type="submit" class="btn btn-dark">Inserir Portifólio</button>
 
                     </div>

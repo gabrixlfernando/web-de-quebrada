@@ -2,15 +2,12 @@
 
 require_once('class/avaliacoes.php');
 $listaAvaliacoes = new AvaliacoesClass();
-$listar = $listaAvaliacoes->listaar();
+$listar = $listaAvaliacoes->listaardes();
 //var_dump($listar); 
 
 ?>
 
-<div class="btno">
-<h2><a href="index.php?p=avaliacoes&av=inserir" class="btn btn-dark">Nova Avaliação</a></h2>
-<h2><a href="index.php?p=avaliacoes&av=desativado" class="btn btn-dark">Avaliaçôes Desativadas</a></h2>
-</div>
+<h2><a href="index.php?p=avaliacoes" class="btn btn-dark">Avaliações Ativas</a></h2>
 
 
 <div class="container">
@@ -25,8 +22,8 @@ $listar = $listaAvaliacoes->listaar();
                 <th>ALT</th>
                 <th>MENSAGEM</th>
                 <th>STATUS</th>
-                <th> ATUALIZAR</th>
-                <th> DESATIVAR</th>
+                <th> ATIVAR</th>
+               
             </tr>
         </thead>
 
@@ -41,9 +38,8 @@ $listar = $listaAvaliacoes->listaar();
                     <td><?php echo $linha['altAvaliacao'] ?></td>
                     <td><?php echo $linha['textAvaliacao'] ?></td>
                     <td><?php echo $linha['statusAvaliacao'] ?></td>
-                    <td><a href="index.php?p=avaliacoes&av=atualizar&id=<?php echo $linha['idAvaliacao'] ?>" class="btn btn-outline-success"> ATUALIZAR</td>
-                    <td style="text-align: center;"><a href="index.php?p=avaliacoes&av=desativar&id=<?php echo $linha['idAvaliacao'] ?>"> <i class="fa-solid fa-trash-can"></td>
-                </tr>
+                    <td><a href="index.php?p=avaliacoes&av=ativar&id=<?php echo $linha['idAvaliacao'] ?>" class="btn btn-outline-success"> ATIVAR</td>
+                   
             <?php endforeach; ?>
         </tbody>
     </table>
