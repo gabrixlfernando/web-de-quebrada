@@ -14,8 +14,8 @@ class AvaliacoesClass
    
 
     // MÉTODOS
-    public function listar(){
-        $query = "SELECT * FROM tblavaliacao;";
+    public function listaar(){
+        $query = "SELECT * FROM tblavaliacao WHERE statusAvaliacao ='ATIVO';";
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($query);
         $lista = $resultado->fetchAll();
@@ -31,6 +31,46 @@ class AvaliacoesClass
         $conn = Conexao::LigarConexao();
         $conn->exec($query);
         echo "<script>document.location='index.php?p=avaliacoes'</script>";
+    }
+
+    public function Carregar()
+    {
+        $query = "SELECT * FROM tblavaliacao WHERE idAvaliacao = " . $this->idAvaliacao;;
+        $conn = Conexao::LigarConexao();
+        $resultado = $conn->query($query);
+        $lista = $resultado->fetchAll();
+
+
+        foreach ($lista as $linha) {
+            $this->imgAvaliacao        =   $linha['imgAvaliacao'];
+            $this->altAvaliacao        =   $linha['altAvaliacao'];
+            $this->textAvaliacao       =   $linha['textAvaliacao'];
+            $this->statusAvaliacao     =   $linha['statusAvaliacao'];
+        }
+    }
+
+    public function Atualizar(){
+        $query = "UPDATE tblavaliacao SET imgAvaliacao='" . $this->imgAvaliacao . "',
+        altAvaliacao='" . $this->altAvaliacao . "',
+        textAvaliacao='" . $this->textAvaliacao . "',
+        statusAvaliacao='" . $this->statusAvaliacao . "' 
+        WHERE idAvaliacao = " . $this->idAvaliacao;;
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
+        echo "<script>document.location='index.php?p=avaliacoes'</script>";
+
+    }
+
+
+
+    public function Desativar(){
+        $query = "UPDATE tblavaliacao SET 
+        statusAvaliacao='DESATIVADO' 
+        WHERE idAvaliacao = " . $this->idAvaliacao;;
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
+        echo "<script>document.location='index.php?p=avaliacoes'</script>";
+
     }
 
 }

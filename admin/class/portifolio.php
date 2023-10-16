@@ -30,6 +30,33 @@ class PortifolioClass
         echo "<script>document.location='index.php?p=portifolio'</script>";
     }
 
+    public function Carregar()
+    {
+        $query = "SELECT * FROM tblportfolio WHERE idPortifolio = " . $this->idPortifolio;;
+        $conn = Conexao::LigarConexao();
+        $resultado = $conn->query($query);
+        $lista = $resultado->fetchAll();
+
+
+        foreach ($lista as $linha) {
+            $this->imgPortifolio        =   $linha['imgPortifolio'];
+            $this->altPortifolio        =   $linha['altPortifolio'];
+            $this->statusPortifolio     =   $linha['statusPortifolio'];
+        }
+    }
+
+    public function Atualizar(){
+        $query = "UPDATE tblportfolio SET imgPortifolio='" . $this->imgPortifolio . "',
+        altPortifolio='" . $this->altPortifolio . "',
+        statusPortifolio='" . $this->statusPortifolio . "' 
+        WHERE idPortifolio = " . $this->idPortifolio;;
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
+        echo "<script>document.location='index.php?p=portifolio'</script>";
+
+    }
+
+
     public function Desativar(){
         $query = "UPDATE tblportfolio SET 
         statusPortifolio='DESATIVADO' 

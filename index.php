@@ -9,6 +9,15 @@ $listar = $listaPortifolio->Listar();
 
 <?php
 
+require_once('admin/class/avaliacoes.php');
+$listaAvaliacoes = new AvaliacoesClass();
+$listaar = $listaAvaliacoes->listaar();
+//var_dump($listar); 
+
+?>
+
+<?php
+
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
@@ -444,15 +453,14 @@ if (isset($_POST['email'])) {
             </p>
           </div>
           <div class="clientes clientesCarro">
+          <?php foreach ($listaar as $linha) : ?>
             <div class="client">
-              <img src="img/cliente-perfil-01.svg" class="cliente-perfil" alt="foto de perfil de um cliente do site" />
-              <h3>Nome</h3>
-              <p>
-                A empresa de desenvolvimento de sites foi incrível em criar um
-                site responsivo e de alta qualidade para a minha empresa.
-              </p>
+              <img src="img/<?php echo $linha['imgAvaliacao'] ?>" class="cliente-perfil" alt="foto de perfil de um cliente do site" />
+              <h3><?php echo $linha['altAvaliacao'] ?></h3>
+              <p><?php echo $linha['textAvaliacao'] ?></p>
             </div>
-            <div class="client">
+            <?php endforeach ?>
+            <!-- <div class="client">
               <img src="img/cliente-perfil-02.svg" class="cliente-perfil" alt="foto de perfil de um cliente do site" />
               <h3>Nome</h3>
               <p>
@@ -475,7 +483,7 @@ if (isset($_POST['email'])) {
                 A empresa de desenvolvimento de sites foi incrível em criar um
                 site responsivo e de alta qualidade para a minha empresa.
               </p>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

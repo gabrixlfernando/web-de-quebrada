@@ -2,7 +2,7 @@
 
 require_once('class/avaliacoes.php');
 $listaAvaliacoes = new AvaliacoesClass();
-$listar = $listaAvaliacoes->Listar();
+$listar = $listaAvaliacoes->listaar();
 //var_dump($listar); 
 
 ?>
@@ -32,12 +32,13 @@ $listar = $listaAvaliacoes->Listar();
             <?php foreach ($listar as $linha) : ?>
                 <tr>
                     <td><?php echo $linha['idAvaliacao'] ?></td>
-                    <td><?php echo $linha['imgAvaliacao'] ?></td>
+                    <!-- <td><?php echo $linha['imgAvaliacao'] ?></td> -->
+                    <td style="width: 10%;"><?php echo '<img src="../img/' . $linha['imgAvaliacao'] . '">' ?></td>
                     <td><?php echo $linha['altAvaliacao'] ?></td>
                     <td><?php echo $linha['textAvaliacao'] ?></td>
                     <td><?php echo $linha['statusAvaliacao'] ?></td>
-                    <td><a href="index.php?p=avaliacoes&av=atualizar" class="btn btn-outline-success"> ATUALIZAR</td>
-                    <td style="text-align: center;"><a href="index.php?p=avaliacoes&av=desativar"> <i class="fa-solid fa-trash-can"></td>
+                    <td><a href="index.php?p=avaliacoes&av=atualizar&id=<?php echo $linha['idAvaliacao'] ?>" class="btn btn-outline-success"> ATUALIZAR</td>
+                    <td style="text-align: center;"><a href="index.php?p=avaliacoes&av=desativar&id=<?php echo $linha['idAvaliacao'] ?>"> <i class="fa-solid fa-trash-can"></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

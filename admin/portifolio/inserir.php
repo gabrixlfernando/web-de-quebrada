@@ -43,7 +43,7 @@ if (isset($_POST['altPortifolio'])) {
     <div class="card card-info">
 
         <div class="card-header">
-            <h2>Cadastro de Serviço</h2>
+            <h2>Cadastro Portfólio</h2>
         </div>
         <form class="form-horizontal" action="index.php?p=portifolio&po=inserir" method="POST" enctype="multipart/form-data">
             <div class="card-body">

@@ -1,1 +1,88 @@
-<h1>Dashboard</h1>
+<?php
+    require_once('class/dashboard.php');
+    $qtdDash        = new DashClass();
+    $qtdServico     = $qtdDash->QtdServico();
+    $qtdSobre        = $qtdDash->QtdSobre();
+    $qtdContato     = $qtdDash->QtdContato();
+    $qtdPortifolio     = $qtdDash->QtdPortifolio();
+    $qtdAvaliacao     = $qtdDash->QtdAvaliacao();
+?>
+
+<style>
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dashboard-card {
+    flex: 1;
+    min-width: 0;
+    
+}
+
+.card-body{
+    text-align: center;
+}
+
+.card-body h6{
+    font-size: 4em;
+   font-weight: bold;
+}
+
+</style>
+
+
+<div class="container-fluid">
+    <div class="dashboard">
+        <div class="dashboard-card">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Serviços</h5>
+                    <h6><?php echo $qtdServico['idServico']; ?></h6>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-card">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Sobre</h5>
+                    <h6><?php echo $qtdSobre['idSobre']; ?></h6>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-card">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Contato</h5>
+                    <h6><?php echo $qtdContato['idContato']; ?></h6>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-card">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Portifólio</h5>
+                    <h6><?php echo $qtdPortifolio['idPortifolio']; ?></h6>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-card">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Avaliações</h5>
+                    <h6><?php echo $qtdAvaliacao['idAvaliacao']; ?></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

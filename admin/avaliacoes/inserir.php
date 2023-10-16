@@ -7,29 +7,29 @@ if (isset($_POST['textAvaliacao'])) {
 
     $textAvaliacao = $_POST['textAvaliacao'];
     $altAvaliacao = $_POST['altAvaliacao'];
-    $statusServico = $_POST['statusServico'];
+    $statusAvaliacao = $_POST['statusAvaliacao'];
 
-    $arquivo = $_FILES['imgServico'];
+    $arquivo = $_FILES['imgAvaliacao'];
 
     if ($arquivo['error']) {
         throw new Exception('Error' . $arquivo['error']);
     }
 
-    if (move_uploaded_file($arquivo['tmp_name'], '../img/servico/' . $arquivo['name'])) {
-        $imgServico = 'servico/' . $arquivo['name'];
+    if (move_uploaded_file($arquivo['tmp_name'], '../img/avaliacao/' . $arquivo['name'])) {
+        $imgAvaliacao = 'avaliacao/' . $arquivo['name'];
     } else {
         throw new Exception('Erro: Não foi possivel realizar o upload da imagem.');
     }
 
-    $servico = new ServicoClass();
+    $avaliacao = new AvaliacoesClass();
 
-    $servico->textServico = $textServico;
-    $servico->imgServico = $imgServico;
-    $servico->altServico = $tituloServico;
-    $servico->statusServico = $statusServico;
+    $avaliacao->textAvaliacao = $textAvaliacao;
+    $avaliacao->imgAvaliacao = $imgAvaliacao;
+    $avaliacao->altAvaliacao = $altAvaliacao;
+    $avaliacao->statusAvaliacao = $statusAvaliacao;
 
 
-     $servico->Inserir();
+     $avaliacao->Inserir();
 
 }
 
@@ -44,23 +44,22 @@ if (isset($_POST['textAvaliacao'])) {
     <div class="card card-info">
 
         <div class="card-header">
-            <h2>Cadastro de Serviço</h2>
+            <h2>Cadastro de Avaliação</h2>
         </div>
-        <form class="form-horizontal" action="index.php?p=servico&s=inserir" method="POST" enctype="multipart/form-data">
+        <form class="form-horizontal" action="index.php?p=avaliacoes&av=inserir" method="POST" enctype="multipart/form-data">
             <div class="card-body">
                 <div class="row">
                     <div class="col-4">
                         <label for="imagem">Imagem: </label>
                         <img src="img/1695213.png" id="imagemExibida" >
-                        <input type="file" id="inputImagem" style="display: none;" name="imgServico" required>
+                        <input type="file" id="inputImagem" style="display: none;" name="imgAvaliacao" required>
                     </div>
 
                     <div class="col-8">
-                        <input type="text" id="tituloServico" name="tituloServico" class="form-control" placeholder="Titulo" required>
-                        <label class="form-check-label" for="flexSwitchCheckReverse">Ativo: <input type="checkbox" class="form-check-input" name="statusServico" id="statusServico" value="ATIVO" required></label>
-                        <textarea id="textServico" name="textServico" class="form-control" placeholder="Insira o texto do serviço aqui." required></textarea>
-                        <input type="text" name="linkServico" id="linkServico" class="form-control" placeholder="Link" required>
-                        <button type="submit" class="btn btn-dark">Inserir Serviço</button>
+                        <input type="text" id="altAvaliacao" name="altAvaliacao" class="form-control" placeholder="alt" required>
+                        <label class="form-check-label" for="flexSwitchCheckReverse">Ativo: <input type="checkbox" class="form-check-input" name="statusAvaliacao" id="statusAvaliacao" value="ATIVO" required></label>
+                        <textarea id="textAvaliacao" name="textAvaliacao" class="form-control" placeholder="Insira o texto da avaliação aqui." required></textarea>
+                        <button type="submit" class="btn btn-dark">Inserir Avaliação</button>
 
                     </div>
 

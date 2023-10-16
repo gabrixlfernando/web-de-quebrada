@@ -30,7 +30,7 @@ if (isset($_POST['tituloSobre'])) {
     <div class="card card-info">
 
         <div class="card-header">
-            <h2>Cadastro de Serviço</h2>
+            <h2>Cadastro Sobre</h2>
         </div>
         <form class="form-horizontal" action="index.php?p=sobre&sb=inserir" method="POST" enctype="multipart/form-data">
             <div class="card-body">
