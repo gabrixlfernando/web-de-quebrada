@@ -46,6 +46,7 @@
                 <li><a href="index.php?p=contato">Contato</a></li>
                 <li><a href="index.php?p=portifolio">Portifólio</a></li>
                 <li><a href="index.php?p=avaliacoes">Avaliações</a></li>
+                <li><a href="index.php?p=banner">Banner</a></li>
             </ul>
         </nav> 
         <main class="container">
@@ -77,6 +78,10 @@
                     case 'portifolio';
                         # code...
                         require_once('portifolio/portifolio.php');
+                        break;
+                    case 'banner';
+                        # code...
+                        require_once('banner/banner.php');
                         break;
 
                     default:
