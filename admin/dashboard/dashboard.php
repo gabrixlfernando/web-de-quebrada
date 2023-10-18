@@ -6,6 +6,7 @@
     $qtdContato     = $qtdDash->QtdContato();
     $qtdPortifolio     = $qtdDash->QtdPortifolio();
     $qtdAvaliacao     = $qtdDash->QtdAvaliacao();
+    $qtdBanner     = $qtdDash->QtdBanner();
 ?>
 
 <style>
@@ -75,6 +76,14 @@
                 <div class="card-body">
                     <h5 class="card-title">Avaliações</h5>
                     <h6><?php echo $qtdAvaliacao['idAvaliacao']; ?></h6>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-card">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Banner</h5>
+                    <h6><?php echo $qtdBanner['idBanner']; ?></h6>
                 </div>
             </div>
         </div>

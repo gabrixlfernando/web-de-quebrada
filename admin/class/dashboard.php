@@ -47,6 +47,13 @@
             $lista = $resultado->fetch();
             return $lista;
         }
+        public function QtdBanner(){
+            $query = "SELECT COUNT(*) AS idBanner FROM tblbanner";
+            $conn = Conexao::LigarConexao();
+            $resultado = $conn->query($query);
+            $lista = $resultado->fetch();
+            return $lista;
+        }
 
 
 
