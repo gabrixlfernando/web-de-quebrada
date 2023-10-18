@@ -1,4 +1,3 @@
-
 <?php
 
 $id = $_GET['id'];
@@ -10,41 +9,39 @@ $banner = new BannerClass($id);
 if (isset($_POST['altBanner'])) {
 
 
-    
+
 
     $altBanner = $_POST['altBanner'];
     $statusBanner = $_POST['statusBanner'];
 
-    if(!empty($_FILES['imgBanner']['name'])){
+    if (!empty($_FILES['imgBanner']['name'])) {
         $arquivo = $_FILES['imgBanner'];
 
         if ($arquivo['error']) {
             throw new Exception('Error' . $arquivo['error']);
         }
-    
+
         if (move_uploaded_file($arquivo['tmp_name'], '../img/banner/' . $arquivo['name'])) {
             $imgBanner = 'banner/' . $arquivo['name'];
         } else {
             throw new Exception('Erro: Não foi possivel realizar o upload da imagem.');
         }
-    
-    }else{
+    } else {
         $imgBanner = $banner->imgBanner;
     }
-   
+
 
     $banner->altBanner = $altBanner;
     $banner->imgBanner = $imgBanner;
     $banner->statusBanner = $statusBanner;
 
 
-     $banner->Atualizar();
-
+    $banner->Atualizar();
 }
 
 
 
-?>  
+?>
 
 
 
@@ -60,7 +57,7 @@ if (isset($_POST['altBanner'])) {
                 <div class="row">
                     <div class="col-4">
                         <label for="imagem">Imagem: </label>
-                        <img src="<?php echo '../img/' . $banner->imgBanner ?>" id="imagemExibida" >
+                        <img src="<?php echo '../img/' . $banner->imgBanner ?>" id="imagemExibida">
                         <input type="file" id="inputImagem" style="display: none;" name="imgBanner">
                     </div>
 
