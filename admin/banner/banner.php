@@ -2,8 +2,6 @@
 
 $pagina = @$_GET['ban'];
 
-// require_once('listar.php');
-
 if ($pagina == NULL) {
     require_once('listar.php');
 } else {

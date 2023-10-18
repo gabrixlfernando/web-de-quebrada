@@ -19,33 +19,34 @@ class BannerClass
         }
     }
 
-    public function Listar()
-    {
+
+    public function Listar(){
         $query = "SELECT * FROM tblbanner WHERE statusBanner ='ATIVO';";
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($query);
         $lista = $resultado->fetchAll();
         return $lista;
     }
-    public function Listaar()
-    {
+    public function Listaar(){
         $query = "SELECT * FROM tblbanner WHERE statusBanner ='DESATIVADO';";
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($query);
         $lista = $resultado->fetchAll();
         return $lista;
     }
-   
+
     public function Inserir()
     {
-        $query = "INSERT INTO tblbanner(imgBanner,
+        $query = "INSERT INTO tblbanner(
+        imgBanner,
         altBanner,
         statusBanner) 
-    VALUES('" . $this->imgBanner . "', '" . $this->altBanner . "','" . $this->statusBanner . "');";
+    VALUES( '" . $this->imgBanner . "', '" . $this->altBanner . "','" . $this->statusBanner . "');";
         $conn = Conexao::LigarConexao();
         $conn->exec($query);
-        echo "<script>document.location='index.php?p=servico'</script>";
+        echo "<script>document.location='index.php?p=banner'</script>";
     }
+
 
     public function Carregar()
     {
@@ -56,7 +57,6 @@ class BannerClass
 
 
         foreach ($lista as $linha) {
-           
             $this->imgBanner        =   $linha['imgBanner'];
             $this->altBanner        =   $linha['altBanner'];
             $this->statusBanner     =   $linha['statusBanner'];
@@ -75,6 +75,12 @@ class BannerClass
 
     }
 
+
+
+
+
+
+
     public function Ativar(){
         $query = "UPDATE tblbanner SET 
         statusBanner='ATIVO' 
@@ -86,6 +92,7 @@ class BannerClass
     }
 
 
+
     public function Desativar(){
         $query = "UPDATE tblbanner SET 
         statusBanner='DESATIVADO' 
@@ -95,4 +102,5 @@ class BannerClass
         echo "<script>document.location='index.php?p=banner'</script>";
 
     }
+   
  }

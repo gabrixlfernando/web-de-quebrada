@@ -49,8 +49,6 @@ if (isset($_POST['altBanner'])) {
 
 
 
-
-
 <div class="col-11">
     <div class="card card-info">
 
@@ -69,7 +67,7 @@ if (isset($_POST['altBanner'])) {
                     <div class="col-8">
                         <input type="text" id="altBanner" name="altBanner" class="form-control" placeholder="alt" required value="<?php echo $banner->altBanner ?>">
                         <label class="form-check-label" for="flexSwitchCheckReverse">Ativo: <input type="checkbox" class="form-check-input" name="statusBanner" id="statusBanner" value="<?php echo $banner->statusBanner ?>" required></label>
-                        <button type="submit" class="btn btn-dark">Atualizar Banner</button>
+                        <button type="submit" class="btn btn-dark">Atualizar Serviço</button>
 
                     </div>
 
