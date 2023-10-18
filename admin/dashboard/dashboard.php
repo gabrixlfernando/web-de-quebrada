@@ -34,6 +34,11 @@
    font-weight: bold;
 }
 
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
 </style>
 
 
@@ -42,48 +47,48 @@
         <div class="dashboard-card">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Serviços</h5>
-                    <h6><?php echo $qtdServico['idServico']; ?></h6>
+                    <a href="index.php?p=servico"><h5 class="card-title">Serviços</h5>
+                    <h6><?php echo $qtdServico['idServico']; ?></h6></a>
                 </div>
             </div>
         </div>
         <div class="dashboard-card">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Sobre</h5>
-                    <h6><?php echo $qtdSobre['idSobre']; ?></h6>
+                    <a href="index.php?p=sobre"><h5 class="card-title">Sobre</h5>
+                    <h6><?php echo $qtdSobre['idSobre']; ?></h6></a>
                 </div>
             </div>
         </div>
         <div class="dashboard-card">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Contato</h5>
-                    <h6><?php echo $qtdContato['idContato']; ?></h6>
+                    <a href="index.php?p=contato"><h5 class="card-title">Contato</h5>
+                    <h6><?php echo $qtdContato['idContato']; ?></h6></a>
                 </div>
             </div>
         </div>
         <div class="dashboard-card">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Portifólio</h5>
-                    <h6><?php echo $qtdPortifolio['idPortifolio']; ?></h6>
+                    <a href="index.php?p=portifolio"><h5 class="card-title">Portifólio</h5>
+                    <h6><?php echo $qtdPortifolio['idPortifolio']; ?></h6></a>
                 </div>
             </div>
         </div>
         <div class="dashboard-card">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Avaliações</h5>
-                    <h6><?php echo $qtdAvaliacao['idAvaliacao']; ?></h6>
+                    <a href="index.php?p=avaliacoes"><h5 class="card-title">Avaliações</h5>
+                    <h6><?php echo $qtdAvaliacao['idAvaliacao']; ?></h6></a>
                 </div>
             </div>
         </div>
         <div class="dashboard-card">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Banner</h5>
-                    <h6><?php echo $qtdBanner['idBanner']; ?></h6>
+                    <a href="index.php?p=banner"><h5 class="card-title">Banner</h5>
+                    <h6><?php echo $qtdBanner['idBanner']; ?></h6></a>
                 </div>
             </div>
         </div>
