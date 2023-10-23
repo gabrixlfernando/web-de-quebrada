@@ -1,3 +1,25 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['login'])){
+        header("Location:login.php");
+        
+    }
+
+    require_once('class/login.php');
+    $usuario = new login();
+    $usuario->idUsuario = $_SESSION['idUser'];
+    $dadosUsuario = $usuario->Verificarlogin();
+
+
+    var_dump($dadosUsuario);
+
+   // $idUsuario = $_SESSION['idUser'];
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -86,7 +108,7 @@
 
                     default:
                         # code...
-                        require_once('dashboard/dashboard.php');
+                         require_once('dashboard/dashboard.php');
                         break;
                 }
 

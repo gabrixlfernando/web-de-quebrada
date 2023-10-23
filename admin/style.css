@@ -212,4 +212,13 @@ tbody tr td a i:hover{
 
 
 
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+
+.card-login{
+    width: 50%;
+}
