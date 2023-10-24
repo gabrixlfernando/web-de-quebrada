@@ -1,37 +1,39 @@
 <?php
-    require_once('class/login.php');
+require_once('class/login.php');
 
-    session_start();
-    $msgErro = '';
+session_start();
+$msgErro = '';
 
-    if(isset($_POST['email'])){
-        $email =        $_POST['email'];
-        $senha =        $_POST['senha'];
-
-
-        //criptogafia de senha
-        //$senha = password_hash($senha, PASSWORD_DEFAULT);
-        //md5($senha);
-
-        $login = new login();
-        $login->emailUsuario = $email;
-        $login->senhaUsuario = $senha;
-        $dadosLogin = $login->Verificarlogin();
-
-        if($dadosLogin ==  NULL){
-            $msgErro = 'Login Falhou! Tente novamente!';
-        }else{
-            $_SESSION['login']          = $dadosLogin=['emailUsuario'];
-            $_SESSION['idUser']         = $dadosLogin=['idUsuario'];
-
-            header('Location:index.php');
-
-            exit();
-        }
+if (isset($_POST['email'])) {
+    $email =        $_POST['email'];
+    $senha =        $_POST['senha'];
 
 
-        // var_dump($dadosLogin);
+    //criptogafia de senha
+    //$senha = password_hash($senha, PASSWORD_DEFAULT);
+    //md5($senha);
+
+    $login = new Login();
+    $login->emailUsuario = $email;
+    $login->senhaUsuario = $senha;
+    $dadosLogin = $login->Verificarlogin();
+
+
+
+    if ($dadosLogin == NULL) {
+
+        $msgErro = 'Login falhou tente novamente';
+    } else {
+        $_SESSION['login'] = $dadosLogin['emailUsuario'];
+        $_SESSION['idUser'] = $dadosLogin['idUsuario'];
+
+        header('Location:index.php');
+        exit();
     }
+
+
+    // var_dump($dadosLogin);
+}
 
 ?>
 
@@ -181,7 +183,7 @@
 
 <div class="container">
     <div class="card card-container">
-        
+
         <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
         <p id="profile-name" class="profile-name-card"></p>
         <form class="form-signin" action="#" method="POST">

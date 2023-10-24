@@ -1,23 +1,31 @@
 <?php
-    session_start();
 
-    if(!isset($_SESSION['login'])){
-        header("Location:login.php");
-        
-    }
+        session_start();
 
-    require_once('class/login.php');
-    $usuario = new login();
-    $usuario->idUsuario = $_SESSION['idUser'];
-    $dadosUsuario = $usuario->Verificarlogin();
+        if (!isset($_SESSION['login'])) {
+            header("Location:login.php");
+        }
+
+        require_once('class/login.php');
+        $usuario = new login();
+        $usuario->idUsuario = $_SESSION['idUser'];
+        $dadosUsuario = $usuario->Verificarlogin();
 
 
-    var_dump($dadosUsuario);
+        var_dump($dadosUsuario);
 
-   // $idUsuario = $_SESSION['idUser'];
+        // $idUsuario = $_SESSION['idUser'];
+
+     
+
+        require_once('class/login.php');
+        $listaUsuario = new login();
+        $listar = $listaUsuario->Listar();
+        //var_dump($listar); 
+
+
 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -49,16 +57,18 @@
 
         <!-- <h1>Painel de Administração</h1> -->
         <div class="user-menu">
-            <img src="img/cliente-perfil-02.svg" alt="">
+        <?php foreach ($listar as $linha) : ?>
+            <?php echo '<img src="../img/' . $linha['fotoUsuario'] . '">' ?>
             <a href="#">Usuário</a>
             <a href="#">Sair</a>
+        <?php endforeach ?>
         </div>
     </header>
 
     <div class="wrapper">
 
 
-         <nav class="sidebar">
+        <nav class="sidebar">
             <div>
 
             </div>
@@ -69,8 +79,9 @@
                 <li><a href="index.php?p=portifolio">Portifólio</a></li>
                 <li><a href="index.php?p=avaliacoes">Avaliações</a></li>
                 <li><a href="index.php?p=banner">Banner</a></li>
+                <li><a href="index.php?p=usuario">Usuário</a></li>
             </ul>
-        </nav> 
+        </nav>
         <main class="container">
             <div class="row">
 
@@ -105,10 +116,14 @@
                         # code...
                         require_once('banner/banner.php');
                         break;
+                    case 'usuario';
+                        # code...
+                        require_once('usuario/usuario.php');
+                        break;
 
                     default:
                         # code...
-                         require_once('dashboard/dashboard.php');
+                        require_once('dashboard/dashboard.php');
                         break;
                 }
 
