@@ -18,8 +18,8 @@
 
      
 
-        require_once('class/login.php');
-        $listaUsuario = new login();
+        require_once('class/usuario.php');
+        $listaUsuario = new UsuarioClass();
         $listar = $listaUsuario->Listar();
         //var_dump($listar); 
 

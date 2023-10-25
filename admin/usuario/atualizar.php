@@ -1,18 +1,19 @@
 <?php
 
 $id = $_GET['id'];
-require_once('class/login.php');
+require_once('class/usuario.php');
 
-$usuario = new Login($id);
+$usuario = new UsuarioClass($id);
 
 if (isset($_POST['emailUsuario'])) {
 
 
-    require_once('class/login.php');
-
     $emailUsuario = $_POST['emailUsuario'];
     $senhaUsuario = $_POST['senhaUsuario'];
     $nomeUsuario = $_POST['nomeUsuario'];
+    $nivelUsuario = $_POST['nivelUsuario'];
+    $dataCadUsuario = $_POST['dataCadUsuario'];
+    $telefoneUsuario = $_POST['telefoneUsuario'];
     $statusUsuario = $_POST['statusUsuario'];
 
     $arquivo = $_FILES['fotoUsuario'];
@@ -35,15 +36,14 @@ if (isset($_POST['emailUsuario'])) {
     }
    
 
-    $usuario = new Login();
-
-    $usuario->emailUsuario = $emailUsuario;
-    $usuario->fotoUsuario = $fotoUsuario;
     $usuario->nomeUsuario = $nomeUsuario;
-    $usuario->nivelUsuario = $nivelUsuario;
-    $usuario->telefoneUsuario = $telefoneUsuario;
+    $usuario->emailUsuario = $emailUsuario;
+    $usuario->senhaUsuario = $senhaUsuario; 
+    $usuario->nivelUsuario = $nivelUsuario; 
     $usuario->dataCadUsuario = $dataCadUsuario;
+    $usuario->telefoneUsuario = $telefoneUsuario;
     $usuario->statusUsuario = $statusUsuario;
+    $usuario->fotoUsuario = $fotoUsuario;
 
 
      $usuario->Atualizar();
@@ -69,19 +69,20 @@ if (isset($_POST['emailUsuario'])) {
                     <div class="col-4">
                         <label for="imagem">Imagem: </label>
                         <img src="<?php echo '../img/' . $usuario->fotoUsuario ?>" id="imagemExibida" >
-                        <input type="file" id="inputImagem" style="display: none;" name="fotoUsuario" required>
+                        <input type="file" id="inputImagem" style="display: none;" name="fotoUsuario">
                     </div>
 
                     <div class="col-8">
+                         <input type="hidden" name="idUsuario" value="<?php echo $usuario->idUsuario ?>">
                         <input type="text" id="emailUsuario" name="emailUsuario" class="form-control" placeholder="Email" value="<?php echo $usuario->emailUsuario ?>" required>
-                        <label class="form-check-label" for="flexSwitchCheckReverse">Ativo: <input type="checkbox" class="form-check-input" name="statusUsuario" id="statusUsuario" value="statusUsuario" required></label>
+                        <label class="form-check-label" for="flexSwitchCheckReverse">Ativo: <input type="checkbox" class="form-check-input" name="statusUsuario" id="statusUsuario" value="<?php echo $usuario->statusUsuario ?>" required></label>
                         
                         <input type="text" name="senhaUsuario" id="senhaUsuario" class="form-control" placeholder="Senha" value="<?php echo $usuario->senhaUsuario ?>" required>
                         <input type="text" name="nomeUsuario" id="nomeSUsuario" class="form-control" placeholder="Nome" value="<?php echo $usuario->nomeUsuario ?>" required>
                         <input type="text" name="telefoneUsuario" id="telefoneUsuario" class="form-control" placeholder="Telefone" value="<?php echo $usuario->telefoneUsuario ?>" required>
                         <input type="text" name="nivelUsuario" id="nivelUsuario" class="form-control" placeholder="Nivel Usuario" value="<?php echo $usuario->nivelUsuario ?>" required>
                         <input type="text" name="dataCadUsuario" id="dataCadUsuario" class="form-control" placeholder="Data Cadastro usuario" value="<?php echo $usuario->dataCadUsuario ?>" required>
-                        <button type="submit" class="btn btn-dark">Inserir Usuário</button>
+                        <button type="submit" class="btn btn-dark">Atualizar Usuário</button>
 
                     </div>
 

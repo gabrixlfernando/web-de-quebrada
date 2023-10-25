@@ -1,7 +1,7 @@
 <?php
 
-require_once('class/login.php');
-$listaUsuario = new Login();
+require_once('class/usuario.php');
+$listaUsuario = new UsuarioClass();
 $listar = $listaUsuario->Listar();
 
 ?>

@@ -3,11 +3,13 @@
 if (isset($_POST['emailUsuario'])) {
 
 
-    require_once('class/login.php');
+    require_once('class/usuario.php');
 
     $emailUsuario = $_POST['emailUsuario'];
     $senhaUsuario = $_POST['senhaUsuario'];
     $nomeUsuario = $_POST['nomeUsuario'];
+    $telefoneUsuario = $_POST['telefoneUsuario'];
+    $nivelUsuario = $_POST['nivelUsuario'];
     $statusUsuario = $_POST['statusUsuario'];
 
     $arquivo = $_FILES['fotoUsuario'];
@@ -22,7 +24,7 @@ if (isset($_POST['emailUsuario'])) {
         throw new Exception('Erro: Não foi possivel realizar o upload da imagem.');
     }
 
-    $usuario = new Login();
+    $usuario = new UsuarioClass();
 
     $usuario->emailUsuario = $emailUsuario;
     $usuario->fotoUsuario = $fotoUsuario;

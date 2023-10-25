@@ -1,10 +1,10 @@
 <?php
 
-require_once('class/login.php');
+require_once('class/usuario.php');
 
 $id = $_GET['id'];
 
-$usuario = new login($id);
+$usuario = new UsuarioClass($id);
 
 $usuario->idUsuario = $id;
 
