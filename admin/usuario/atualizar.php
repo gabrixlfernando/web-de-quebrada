@@ -1,5 +1,10 @@
 <?php
 
+$id = $_GET['id'];
+require_once('class/login.php');
+
+$usuario = new Login($id);
+
 if (isset($_POST['emailUsuario'])) {
 
 
@@ -58,7 +63,7 @@ if (isset($_POST['emailUsuario'])) {
         <div class="card-header">
             <h2>Atualizar Usuário</h2>
         </div>
-        <form class="form-horizontal" action="index.php?p=usuario&user=atualizar&id=<?php echo $servico->idUsuario ?>" method="POST" enctype="multipart/form-data">
+        <form class="form-horizontal" action="index.php?p=usuario&user=atualizar&id=<?php echo $usuario->idUsuario ?>" method="POST" enctype="multipart/form-data">
             <div class="card-body">
                 <div class="row">
                     <div class="col-4">
@@ -68,14 +73,14 @@ if (isset($_POST['emailUsuario'])) {
                     </div>
 
                     <div class="col-8">
-                        <input type="text" id="emailUsuario" name="emailUsuario" class="form-control" placeholder="Email" required>
-                        <label class="form-check-label" for="flexSwitchCheckReverse">Ativo: <input type="checkbox" class="form-check-input" name="statusUsuario" id="statusUsuario" value="ATIVO" required></label>
+                        <input type="text" id="emailUsuario" name="emailUsuario" class="form-control" placeholder="Email" value="<?php echo $usuario->emailUsuario ?>" required>
+                        <label class="form-check-label" for="flexSwitchCheckReverse">Ativo: <input type="checkbox" class="form-check-input" name="statusUsuario" id="statusUsuario" value="statusUsuario" required></label>
                         
-                        <input type="text" name="senhaUsuario" id="senhaUsuario" class="form-control" placeholder="Senha" required>
-                        <input type="text" name="nomeUsuario" id="nomeSUsuario" class="form-control" placeholder="Nome" required>
-                        <input type="text" name="telefoneUsuario" id="telefoneUsuario" class="form-control" placeholder="Telefone" required>
-                        <input type="text" name="nivelUsuario" id="nivelUsuario" class="form-control" placeholder="Nivel Usuario" required>
-                        <input type="text" name="dataCadUsuario" id="dataCadUsuario" class="form-control" placeholder="Data Cadastro usuario" required>
+                        <input type="text" name="senhaUsuario" id="senhaUsuario" class="form-control" placeholder="Senha" value="<?php echo $usuario->senhaUsuario ?>" required>
+                        <input type="text" name="nomeUsuario" id="nomeSUsuario" class="form-control" placeholder="Nome" value="<?php echo $usuario->nomeUsuario ?>" required>
+                        <input type="text" name="telefoneUsuario" id="telefoneUsuario" class="form-control" placeholder="Telefone" value="<?php echo $usuario->telefoneUsuario ?>" required>
+                        <input type="text" name="nivelUsuario" id="nivelUsuario" class="form-control" placeholder="Nivel Usuario" value="<?php echo $usuario->nivelUsuario ?>" required>
+                        <input type="text" name="dataCadUsuario" id="dataCadUsuario" class="form-control" placeholder="Data Cadastro usuario" value="<?php echo $usuario->dataCadUsuario ?>" required>
                         <button type="submit" class="btn btn-dark">Inserir Usuário</button>
 
                     </div>
