@@ -12,7 +12,7 @@
         $dadosUsuario = $usuario->Verificarlogin();
 
 
-        var_dump($dadosUsuario);
+        // var_dump($dadosUsuario);
 
         // $idUsuario = $_SESSION['idUser'];
 
@@ -52,16 +52,16 @@
 
     <header class="topbar">
         <div>
-            <a href="index.php"><img src="img/logodark.svg" alt=""></a>
+            <a href="index.php"><img src="img/logodark.svg"></a>
         </div>
 
         <!-- <h1>Painel de Administração</h1> -->
         <div class="user-menu">
-        <?php foreach ($listar as $linha) : ?>
-            <?php echo '<img src="../img/' . $linha['fotoUsuario'] . '">' ?>
-            <a href="#">Usuário</a>
+       
+            <img src="../img/<?php echo $dadosUsuario['fotoUsuario'];?>">
+            <a href="#"><?php echo $dadosUsuario['nomeUsuario']; ?></a>
             <a href="#">Sair</a>
-        <?php endforeach ?>
+       
         </div>
     </header>
 

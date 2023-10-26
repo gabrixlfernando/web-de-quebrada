@@ -9,6 +9,7 @@ if (isset($_POST['emailUsuario'])) {
     $senhaUsuario = $_POST['senhaUsuario'];
     $nomeUsuario = $_POST['nomeUsuario'];
     $telefoneUsuario = $_POST['telefoneUsuario'];
+    // $dataCadUsuario = $_POST['dataCadUsuario'];
     $nivelUsuario = $_POST['nivelUsuario'];
     $statusUsuario = $_POST['statusUsuario'];
 
@@ -27,13 +28,15 @@ if (isset($_POST['emailUsuario'])) {
     $usuario = new UsuarioClass();
 
     $usuario->emailUsuario = $emailUsuario;
+    $usuario->senhaUsuario = $senhaUsuario;
     $usuario->fotoUsuario = $fotoUsuario;
     $usuario->nomeUsuario = $nomeUsuario;
     $usuario->nivelUsuario = $nivelUsuario;
     $usuario->telefoneUsuario = $telefoneUsuario;
-    $usuario->dataCadUsuario = $dataCadUsuario;
+    // $usuario->dataCadUsuario = $dataCadUsuario;
     $usuario->statusUsuario = $statusUsuario;
-
+    date_default_timezone_set('America/Sao_Paulo');
+    $usuario->dataCadUsuario = date('Y-m-d H:i:s');
 
      $usuario->Inserir();
 
@@ -69,7 +72,10 @@ if (isset($_POST['emailUsuario'])) {
                         <input type="text" name="nomeUsuario" id="nomeSUsuario" class="form-control" placeholder="Nome" required>
                         <input type="text" name="telefoneUsuario" id="telefoneUsuario" class="form-control" placeholder="Telefone" required>
                         <input type="text" name="nivelUsuario" id="nivelUsuario" class="form-control" placeholder="Nivel Usuario" required>
-                        <input type="text" name="dataCadUsuario" id="dataCadUsuario" class="form-control" placeholder="Data Cadastro usuario" required>
+                        <!-- <div class="mb-3">
+                        <label for="dataCadUsuario" class="form-label">Data Cadastro:</label>
+                        <input type="date" name="dataCadUsuario" id="dataCadUsuario" class="form-control" placeholder="Data Cadastro usuario" required>
+                        </div> -->
                         <button type="submit" class="btn btn-dark">Inserir Usuário</button>
 
                     </div>

@@ -20,6 +20,7 @@ $listar = $listaUsuario->Listar();
         <thead class="table-dark">
             <tr>
                 <th>ID</th>
+                <th>FOTO</th>
                 <th>NOME</th>
                 <th>EMAIL</th>
                 <th>SENHA</th>
@@ -27,7 +28,6 @@ $listar = $listaUsuario->Listar();
                 <th>DATA CADASTRO</th>
                 <th>TELEFONE</th>
                 <th>STATUS</th>
-                <th>FOTO</th>
                 <th> ATUALIZAR</th>
                 <th> DESATIVAR</th>
             </tr>
@@ -39,14 +39,14 @@ $listar = $listaUsuario->Listar();
             <?php foreach ($listar as $linha) : ?>
                 <tr>
                     <td><?php echo $linha['idUsuario'] ?></td>
+                    <td style="width: 10%;"><?php echo '<img src="../img/' . $linha['fotoUsuario'] . '">' ?></td>
                     <td><?php echo $linha['nomeUsuario'] ?></td>
                     <td><?php echo $linha['emailUsuario'] ?></td>
                     <td><?php echo $linha['senhaUsuario'] ?></td>
                     <td><?php echo $linha['nivelUsuario'] ?></td>
                     <td><?php echo $linha['dataCadUsuario'] ?></td>
                     <td><?php echo $linha['telefoneUsuario'] ?></td>
-                    <td><?php echo $linha['statusUsuario'] ?></td>
-                    <td style="width: 10%;"><?php echo '<img src="../img/' . $linha['fotoUsuario'] . '">' ?></td>
+                    <td><?php echo $linha['statusUsuario'] ?></td>      
                     <td><a href="index.php?p=usuario&user=atualizar&id=<?php echo $linha['idUsuario'] ?>" class="btn btn-outline-success"> ATUALIZAR</td>
                     <td style="text-align: center;"><a href="index.php?p=usuario&user=desativar&id=<?php echo $linha['idUsuario'] ?>" ><i class="fa-solid fa-trash-can"></i></i></td>
                 </tr>

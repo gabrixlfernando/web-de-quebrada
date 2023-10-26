@@ -54,6 +54,13 @@
             $lista = $resultado->fetch();
             return $lista;
         }
+        public function QtdUsuario(){
+            $query = "SELECT COUNT(*) AS idUsuario FROM tblbanner";
+            $conn = Conexao::LigarConexao();
+            $resultado = $conn->query($query);
+            $lista = $resultado->fetch();
+            return $lista;
+        }
 
 
 

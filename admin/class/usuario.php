@@ -27,6 +27,7 @@ class UsuarioClass{
     public function Listar()
     {
         $query = "SELECT * FROM tblusuario WHERE statusUsuario ='ATIVO';";
+        // $query = "SELECT idUsuario, nomeUsuario, emailUsuario, senhaUsuario, nivelUsuario, DATE_FORMAT(dataCadUsuario,'%d/%m/%Y %H:%i:%s'), telefoneUsuario, statusUsuario, fotoUsuario FROM tblusuario WHERE statusUsuario='ATIVO';";
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($query);
         $lista = $resultado->fetchAll();
